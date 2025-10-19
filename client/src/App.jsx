@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { checkAuth } from './store/auth-slice'
 import { useEffect } from 'react'
 import CheckAuth from './components/common/checkAuth';
-import GetStarted from './pages/auth/getStarted'
 
 
 const App = () => {
@@ -44,7 +43,6 @@ const App = () => {
                           </CheckAuth>}>
               <Route path="login" element={<Login/>}/>
               <Route path='register' element={<Register/>}/>
-              <Route path='getStarted' element={<GetStarted/>}/>
           </Route>
           <Route path="/main" element={<CheckAuth isAuthenticated={isAuthenticated} user={user}>
                             <HomeLayout/>

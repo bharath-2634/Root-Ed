@@ -34,8 +34,9 @@ const Login = () => {
 
       if(data?.payload?.success) {
         toast.success(data?.payload?.message || "Login successful!", {
-          style: { backgroundColor: "black", color: "white" }, 
+          style: { backgroundColor: "black", color: "dark" }, 
         });
+        navigate("/main/home");
       }else {
         toast.error(data?.payload?.message || "Login failed!");
       }
