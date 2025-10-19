@@ -35,7 +35,7 @@ const registerUser = async (req, res) => {
 
         console.log("after pass",req.body);
         // Generate MCID if not provided
-        const generatedMCID = MCID || `MC-${Math.floor(100000 + Math.random() * 900000)}`;
+        // const generatedMCID = MCID || `MC-${Math.floor(100000 + Math.random() * 900000)}`;
 
         // Create new user
         const newUser = new User({
@@ -43,7 +43,7 @@ const registerUser = async (req, res) => {
             email,
             password: hashPassword,
             authType,
-            MCID: generatedMCID,
+            // MCID: generatedMCID,
         });
 
         console.log("newUser", newUser);
@@ -58,7 +58,7 @@ const registerUser = async (req, res) => {
                 userId: newUser._id,
                 email: newUser.email,
                 role: newUser.role,
-                MCID: newUser.MCID,
+                // MCID: newUser.MCID,
             },
             "CLIENT_SECRET_KEY",
             { expiresIn: "7d" }
@@ -76,7 +76,7 @@ const registerUser = async (req, res) => {
                 userName: newUser.userName,
                 email: newUser.email,
                 role: newUser.role,
-                MCID: newUser.MCID,
+                // MCID: newUser.MCID,
             },
         });
 
@@ -123,7 +123,7 @@ const loginUser = async (req, res) => {
                 userId: checkUser._id,
                 email: checkUser.email,
                 role: checkUser.role,
-                MCID: checkUser.MCID,
+                // MCID: checkUser.MCID,
                 userName : checkUser.userName
             },
             "CLIENT_SECRET_KEY",
@@ -138,7 +138,7 @@ const loginUser = async (req, res) => {
                 role: checkUser.role,
                 id: checkUser._id,
                 userName: checkUser.userName,
-                MCID: checkUser.MCID,
+                // MCID: checkUser.MCID,
             },
         });
 
@@ -175,14 +175,14 @@ const googleAuth = async (req, res) => {
         // console.log("user",user);
         if (!user) {
             // If the user doesn't exist, create a new one
-            const MCID = `MC-${Math.floor(100000 + Math.random() * 900000)}`;
+            // const MCID = `MC-${Math.floor(100000 + Math.random() * 900000)}`;
 
            user = new User({
                 userName: payload.family_name,
                 email : payload.email,
                 avatar_url: payload.picture,
                 authType: "google",
-                MCID, 
+                // MCID, 
             });
             await user.save();
         }
@@ -193,7 +193,7 @@ const googleAuth = async (req, res) => {
               userId: user._id,
               email: user.email,
               role: user.role,
-              MCID: user.MCID,
+            //   MCID: user.MCID,
           },
           "CLIENT_SECRET_KEY",
           { expiresIn: "7d" }
@@ -208,7 +208,7 @@ const googleAuth = async (req, res) => {
             userName: user.userName,
             email: user.email,
             role: user.role,
-            MCID: user.MCID,
+            // MCID: user.MCID,
             avatar_url: user.avatar_url,
         },
     });
