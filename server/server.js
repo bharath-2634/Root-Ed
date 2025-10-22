@@ -4,6 +4,7 @@ const passport = require("passport");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const authRouter = require('./routers/auth/auth-router');
+const courseRouter = require('./routers/course/course-router');
 
 
 mongoose
@@ -34,6 +35,7 @@ app.use(passport.initialize());
 app.use(cookieParser());
 app.use(express.json());
 app.use('/api/auth',authRouter);
+app.use('/api/course',courseRouter);
 
 
 
