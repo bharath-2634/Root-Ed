@@ -1,5 +1,5 @@
 import React from 'react'
-import intro_img from "../../assets/intro_aboutUs_home.png"
+import intro_img from "../../assets/intro_img.jpg"
 import { ArrowRight, Users, Check } from 'lucide-react';
 
 const EducationSystemIntro = () => {
@@ -12,13 +12,13 @@ const EducationSystemIntro = () => {
                         <img 
                             src={intro_img}
                             alt="Root-Ed Education System" 
-                            className='lg:w-[95%] md:w-[60%] sm:w-[60%] w-[70%] h-auto object-contain rounded-3xl'
+                            className='lg:w-[80%] md:w-[60%] sm:w-[60%] w-[70%] h-auto object-contain rounded-3xl'
                             onError={(e) => e.target.style.display='none'}
                         />
                     </div>
 
                     <div className='w-full lg:w-1/2  lg:pt-0 font-poppins flex flex-col items-center justify-center gap-3'>
-                        <h2 className='lg:text-[2.5rem] md:text-[2.2rem] sm:text-[2.2rem] text-[1.8rem] font-semibold text-primary lg:text-start mb-5 
+                        <h2 className='lg:text-[2.5rem] md:text-[2.2rem] sm:text-[2.2rem] text-[1.5rem] font-semibold text-primary lg:text-start mb-5 
                         lg:-ml-[1.6rem] md:-ml-[1rem] sm:ml-[1rem] lg:mt-0 md:-mt-10 sm:mt-0'>Our Education System <br /><span className='text-primary_nav lg:text-[2.5rem] md:text-[2.2rem] sm:text-[2.2rem] text-[1.8rem]'>Inspires</span> you more</h2>
 
                         <p className='lg:text-lg md:text-[1.1rem] text-gray-600 leading-relaxed lg:p-6 md:p-6 sm:pl-12 sm:pr-12'>
@@ -35,12 +35,12 @@ const EducationSystemIntro = () => {
                         <button
                             className="
                               lg:self-start flex items-center justify-center
-                              px-4 py-4 sm:px-4 sm:py-4 md:px-4 md:py-4
+                              px-4 py-4 sm:px-4 sm:py-4 md:px-4 md:py-4 
                               bg-primary text-white
                               text-sm sm:text-[0.9rem] md:text-[1rem]
                               rounded shadow-xl
                               transition-all duration-300 ease-in-out
-                              hover:-translate-y-1 hover:shadow-2xl ml-6 mt-10
+                              hover:-translate-y-1 hover:shadow-2xl sm:-ml-6 lg:ml-6 md:ml-6 mt-10
                             "
                           >
                             Start now
