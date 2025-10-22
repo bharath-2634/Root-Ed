@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Menu, X, Rocket } from 'lucide-react'; 
 import logo from "../../assets/logo.png";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { logoutUser } from '@/store/auth-slice';
 
 const navLinks = [
   { name: 'Home', href: '/main/home' },
@@ -31,6 +32,12 @@ const NavHeader = () => {
 
     const firstLetter = user?.userName?.charAt(0);
     return firstLetter;
+  }
+
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logoutUser()).then(()=>alert("logged out successfully")).catch((error)=>console.log(error));
   }
 
 
@@ -74,11 +81,15 @@ const NavHeader = () => {
           {
             isAuthenticated ? (
               <div className="hidden md:block lg:block">
-                <div className='flex items-center justify-center cursor-pointer'>
+                <div className='w-full flex items-center justify-between cursor-pointer gap-3'>
                     <div className="bg-primary p-[.3rem] rounded-full lg:w-[2.8rem] md:w-[2.8 rem] w-[2.8rem] flex items-center justify-center cursor-pointer">
                       <h2 className='lg:text-[1.1rem] md:text-[1.1rem] lg:m-1 md:m-1 text-white font-medium'>{getInital(user)}</h2>
                     </div>
-                    <h2 className='lg:text-[1.1rem] md:text-[1.1rem] lg:m-1 md:m-1 text-primary_nav font-medium'>{user?.userName}</h2>
+                    <div className='flex flex-col items-start justify-start'>
+                      <h2 className='lg:text-[1.2rem] md:text-[1.1rem] text-primary_nav font-semibold'>{user?.userName}</h2>
+                      <p className='lg:text-[.9rem] -mt-1 text-slate-500' onClick={()=>handleLogout()}>logout</p>
+                    </div>
+                    
                 </div>
                 
               </div>
@@ -136,7 +147,11 @@ const NavHeader = () => {
                     <div className="bg-primary p-[.3rem] rounded-full lg:w-[2.8rem] md:w-[2.8 rem] w-[2.6rem] flex items-center justify-center cursor-pointer">
                       <h2 className='lg:text-[1.1rem] md:text-[1.1rem] text-[1.3rem] lg:m-1 md:m-1 text-white font-medium'>{getInital(user)}</h2>
                     </div>
-                    <h2 className='lg:text-[1.1rem] md:text-[1.1rem] lg:m-1 md:m-1 text-primary font-medium'>{user?.userName.charAt(0).toUpperCase() + user?.userName.slice(1)}</h2>
+                    <div className='flex flex-col items-start justify-start '>
+                        <h2 className='lg:text-[1.3rem] md:text-[1.3rem] sm:text-[1.3rem] text-[1.2rem] lg:m-1 md:m-1 text-primary font-medium'>{user?.userName.charAt(0).toUpperCase() + user?.userName.slice(1)}</h2>
+                      <p className='lg:text-[.9rem] -mt-1 text-white' onClick={()=>handleLogout()}>logout</p>
+                    </div>
+                    
                 </div>
                 
             ):(
