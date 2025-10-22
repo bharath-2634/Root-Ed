@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --primary: #151414;
-    --primary-nav : #1c1c1c;
+    --primary: #6EC59B;
+    --primary-nav : #131D2D;
     --nav-link : #c246bf;
     --primary-button : #40B47C;
     --primary-box : #1F1F20;
@@ -51,29 +51,29 @@
 
 /* Hide scrollbar for all browsers */
 html {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
 }
 
 html::-webkit-scrollbar {
-  display: none; /* WebKit browsers */
+  display: none; 
 }
 
 body {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  /* scrollbar-width: none; Firefox */
+   -ms-overflow-style: none; 
 }
 
 body::-webkit-scrollbar {
-  display: none; /* WebKit browsers */
+   display: none;
 }
 
 /* Hide scrollbar for any scrollable element */
 * {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
 }
 
 *::-webkit-scrollbar {
-  display: none; /* WebKit browsers */
+  display: none; 
 }
