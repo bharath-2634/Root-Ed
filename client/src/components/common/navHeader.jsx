@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Rocket } from 'lucide-react'; 
+import { Menu, X, Rocket, LogOut, AlertTriangle  } from 'lucide-react'; 
 import logo from "../../assets/logo.png";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -17,6 +17,8 @@ const NavHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   const [activeLink, setActiveLink] = useState('Home');
+  const [showLogoutPopUp,setShowLogoutPopUp] = useState(false);
+
   const navigate = useNavigate();
 
   const handleLinkClick = (name) => {
@@ -36,13 +38,62 @@ const NavHeader = () => {
 
   const dispatch = useDispatch();
 
-  const handleLogout = () => {
-    dispatch(logoutUser()).then(()=>alert("logged out successfully")).catch((error)=>console.log(error));
+  const confirmLogOut = () => {
+    setShowLogoutPopUp(true);
   }
+
+  const handleLogout = () => {
+    setShowLogoutPopUp(false);
+
+    dispatch(logoutUser()).then(()=>console.log("logout successful ")).catch((error)=>console.log(error));
+  }
+
+  const ConfirmationModal = () => {
+        if (!showLogoutPopUp) return null;
+
+        return (
+            // Backdrop
+            <div className="fixed inset-0 bg-gray-900 bg-opacity-70 z-50 flex items-center justify-center p-4">
+                {/* Modal Container */}
+                <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-sm transform transition-all duration-300 scale-100 opacity-100">
+                    <div className="flex flex-col items-center space-y-4">
+                        <AlertTriangle className="h-10 w-10 text-primary" />
+                        <h3 className="text-xl font-bold text-gray-900">Confirm Logout</h3>
+                        <p className="text-center text-gray-600">
+                            Are you sure you want to log out of your account?
+                        </p>
+                    </div>
+                    
+                    {/* Action Buttons */}
+                    <div className="mt-6 flex justify-between space-x-4">
+                        <button
+                            onClick={()=>setShowLogoutPopUp(false)}
+                            className="flex-1 px-4 py-2 text-sm font-semibold rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition-colors"
+                        >
+                            Cancel
+                        </button>
+                        <button
+                            onClick={handleLogout}
+                            className="flex-1 px-4 py-2 text-sm font-semibold rounded-lg bg-primary text-white hover:bg-primary transition-colors shadow-lg shadow-primary flex items-center justify-center"
+                        >
+                            <LogOut className="h-4 w-4 mr-1" />
+                            Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        );
+    };
 
 
   return (
     <nav className="bg-white font-poppins ">
+
+      {
+        showLogoutPopUp ? (ConfirmationModal()) : (<div>
+          </div>)
+      }
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           
@@ -87,7 +138,7 @@ const NavHeader = () => {
                     </div>
                     <div className='flex flex-col items-start justify-start'>
                       <h2 className='lg:text-[1.2rem] md:text-[1.1rem] text-primary_nav font-semibold'>{user?.userName}</h2>
-                      <p className='lg:text-[.9rem] -mt-1 text-slate-500' onClick={()=>handleLogout()}>logout</p>
+                      <p className='lg:text-[.9rem] -mt-1 text-slate-500' onClick={()=>confirmLogOut()}>logout</p>
                     </div>
                     
                 </div>
@@ -149,7 +200,7 @@ const NavHeader = () => {
                     </div>
                     <div className='flex flex-col items-start justify-start '>
                         <h2 className='lg:text-[1.3rem] md:text-[1.3rem] sm:text-[1.3rem] text-[1.2rem] lg:m-1 md:m-1 text-primary font-medium'>{user?.userName.charAt(0).toUpperCase() + user?.userName.slice(1)}</h2>
-                      <p className='lg:text-[.9rem] -mt-1 text-white' onClick={()=>handleLogout()}>logout</p>
+                      <p className='lg:text-[.9rem] -mt-1 text-white' onClick={()=>confirmLogOut()}>logout</p>
                     </div>
                     
                 </div>
