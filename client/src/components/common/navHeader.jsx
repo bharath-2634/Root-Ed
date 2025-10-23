@@ -44,7 +44,7 @@ const NavHeader = () => {
   return (
     <nav className="bg-white font-poppins ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-20 xl:h-32">
           
           {/* Logo */}
           <div className="flex justify-center items-center lg:w-[7rem] md:w-[6rem] sm:w-[7rem] w-[7rem]">
@@ -53,7 +53,7 @@ const NavHeader = () => {
 
           {/* Desktop Navigation Links (Hidden on small screens) */}
           <div className="hidden lg:flex md:flex flex-grow justify-center">
-            <div className="bg-primary_nav rounded-full p-[.8rem] space-x-2 ">
+            <div className="bg-primary_nav rounded-full p-[.8rem] space-x-2 lg:p-[.8rem] xl:py-[1.3rem] xl:px-[0.5rem]">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -61,8 +61,8 @@ const NavHeader = () => {
                   // Call the new click handler
                   onClick={() => handleLinkClick(link.name)} 
                   className={`
-                    lg:text-[1rem] md:[.6rem] text-[.9rem] transition-all duration-200 
-                    px-4 py-2 rounded-full whitespace-nowrap md:font-medium
+                    xl:text-[1.2rem] lg:text-[1rem] md:[.6rem] text-[.9rem] transition-all duration-200 
+                    px-5 xl:py-4 py-2 rounded-full whitespace-nowrap md:font-medium
                     ${
                       // Check if the current link name matches the activeLink state
                       activeLink === link.name
