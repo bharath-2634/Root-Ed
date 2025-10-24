@@ -26,11 +26,10 @@ const WorldWideFunction = () => {
           className="py-16 sm:py-20 lg:py-24 bg-white"
         >
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <div className="text-center">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-6xl font-bold text-[#131D2D] mb-4 sm:mb-6 leading-tight">
-                Learners with Inspiring
-                <br/>
-                journey of <span className="text-[#6EC59B]">learning</span>
+            <div className="flex flex-col items-center justify-center gap-6 text-center ">
+              <h2 className="lg:text-[2.5rem] md:text-[2.2rem] sm:text-[2.2rem] text-[1.5rem] font-semibold text-primary_nav">
+                Learners with <span className="text-primary mr-3">Inspiring</span> 
+                journey of <span className="text-primary">learning</span>
               </h2>
 
               <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed">
@@ -39,7 +38,7 @@ const WorldWideFunction = () => {
               </p>
 
               <div className="flex justify-center mb-8 sm:mb-12">
-                <button className="bg-[#6EC59B] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-[#5BB88A] transition-all duration-300 hover:transform hover:scale-105 shadow-lg flex items-center gap-2 sm:gap-3">
+                <button className="bg-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-[#5BB88A] transition-all duration-300 hover:transform hover:scale-105 shadow-lg flex items-center gap-2 sm:gap-3">
                   Start learning
                   <FaArrowRight className="text-base sm:text-xl" />
                 </button>

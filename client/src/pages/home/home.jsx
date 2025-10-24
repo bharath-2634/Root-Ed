@@ -5,8 +5,10 @@ import EducationSystemIntro from '@/components/home-view/educationSystem'
 import HomeVideo from '@/components/home-view/homeVideo'
 import LearnSmarterSection from '@/components/home-view/learnSmarter'
 import OurCourses from '@/components/home-view/ourCourses'
-import LovedByLearners from '@/components/common/companyLink'
 import WorldWideFunction from '@/components/home-view/worldWideEducation'
+import TestimonialCarousel from '@/components/common/testimonial'
+import FAQSection from '@/components/common/faq'
+import Footer from '@/components/common/footer'
 
 const home = () => {
   return (
@@ -19,9 +21,10 @@ const home = () => {
       <HomeVideo/>
       <LearnSmarterSection/>
       <OurCourses/>
-      {/* <LovedByLearners/> */}
       <WorldWideFunction/>
-
+      <TestimonialCarousel/>
+      <FAQSection/>
+      <Footer/>
     </div>
   )
 }

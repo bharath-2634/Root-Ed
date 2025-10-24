@@ -10,7 +10,7 @@ const HomeVideo = () => {
     // const thumbnailSrc = '/assets/video-thumbnail.jpg'; 
 
   return (
-    <div className='w-full flex flex-col items-center justify-center gap-3 p-6 font-poppins -mt-10'>
+    <div className='w-full flex flex-col items-center justify-center gap-3 p-6 font-poppins -mt-20'>
         <h2 className='lg:text-[2.5rem] md:text-[2.2rem] sm:text-[2.2rem] text-[1.3rem] font-semibold text-primary '>Learn  
              <span className='lg:text-[4.2rem] md:text-[3.8rem] sm:text-[3.5rem] text-[2.3rem]'>.</span> Explore 
             <span className='lg:text-[4.2rem] md:text-[3.8rem] sm:text-[3.5rem] text-[2.3rem]'>.</span> Innovate

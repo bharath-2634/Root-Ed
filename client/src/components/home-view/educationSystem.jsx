@@ -1,17 +1,40 @@
 import React from 'react'
 import intro_img from "../../assets/intro_img.jpg"
 import { ArrowRight, Users, Check } from 'lucide-react';
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
 const EducationSystemIntro = () => {
   return (
-   <section className='w-full px-4 md:px-8 lg:px-16 py-12 lg:py-24 font-poppins'>
+    <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={containerVariants}
+        className="py-16 sm:py-20 lg:py-24 bg-white -mt-12"
+    >
+        <section className='w-full px-4 md:px-8 lg:px-16 py-12 lg:py-24 font-poppins'>
             <div className='max-w-7xl mx-auto'>
-
                 <div className='flex flex-col lg:flex-row  items-start justify-between gap-12 lg:gap-20'>
                     <div className='w-full lg:w-1/2 flex flex-col items-center justify-center relative'>
-                        <img 
-                            src={intro_img}
-                            alt="Root-Ed Education System" 
+                        <motion.img  
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                            src={intro_img} 
+                            alt="Global learning network visualization" 
                             className='lg:w-[80%] md:w-[60%] sm:w-[60%] w-[70%] h-auto object-contain rounded-3xl'
                             onError={(e) => e.target.style.display='none'}
                         />
@@ -50,6 +73,8 @@ const EducationSystemIntro = () => {
                 </div>
             </div>
         </section>
+    </motion.section>
+    
   )
 }
 
