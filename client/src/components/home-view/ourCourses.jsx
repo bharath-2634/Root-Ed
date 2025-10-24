@@ -30,10 +30,10 @@ const OurCourses = () => {
                 <Swiper
                     slidesPerView={3}
                     spaceBetween={30}
-                    pagination={{
-                    clickable: true,
-                    }}
-                    modules={[Pagination]}
+                    // pagination={{
+                    // clickable: true,
+                    // }}
+                    // modules={[Pagination]}
                     className="mySwiper lg:w-[100%] md:w-[80%] sm:w-[60%]"
                     breakpoints={{
                         0: {           // small devices
@@ -55,7 +55,7 @@ const OurCourses = () => {
                             courses.map(({bestSeller, category, description, duration, image, instructor, level, maxParticipants, price, rating, sales,scheduleDate, scheduleTime, title, type})=>{
                                 return (
                                     <SwiperSlide>
-                                        <div className='w-[100%] bg-white rounded shadow flex flex-col items-start justify-center gap-3'>
+                                        <div className='lg:w-[100%] md:w-[90%] sm:w-[80%] bg-white rounded shadow flex flex-col items-start justify-center gap-3 sm:ml-10' onClick={()=>console.log("show PopUp")}>
                                             <div className="h-50 flex items-center justify-center relative">
                                                 <img 
                                                     src={image} 
@@ -66,7 +66,7 @@ const OurCourses = () => {
                                                         e.target.src = "https://placehold.co/300x200/cccccc/333333?text=Course+Image";
                                                     }}
                                                 />
-                                                <span className="absolute top-2 left-2 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md flex items-center">
+                                                <span className="absolute top-2 left-2 sm:left-10 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md flex items-center">
                                                     {category}
                                                 </span>
                                             </div>
@@ -74,18 +74,18 @@ const OurCourses = () => {
                                             <div className='flex flex-col items-start justify-between gap-2 p-3'>
                                                 <h2 className='font-semibold lg:text-[1.3rem] md:text-[1.2rem] sm:text-[1.5rem]'>{title}</h2>
                                                 <div className='flex items-start justify-between gap-3'>
-                                                    <p className='font-medium lg:text-[1rem] md:text-[1.2rem] sm:text-[1.5rem] text-slate-400'>Author: <span className='text-primary_nav'>{instructor}</span></p>
-
-                                                    {bestSeller ? (<span className=" bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md flex items-center"> <TiStarFullOutline className='-mt-[.1rem] mr-1'/>Best Seller
-                                                    </span>) : (<span className=" bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md flex items-center"> <TiStarFullOutline className='-mt-[.1rem] mr-1'/>Best Seller
-                                                    </span>)}
+                                                    <p className='font-medium lg:text-[1rem] md:text-[.8rem] sm:text-[1rem] text-slate-400'>Author: <span className='text-primary_nav'>{instructor}</span></p>
+                                                    <div className='self-end'>
+                                                        {bestSeller ? (<span className=" bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md flex items-center"> <TiStarFullOutline className='-mt-[.1rem] mr-1'/>Best Seller
+                                                        </span>) : (<span className=" bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md flex items-center"> <TiStarFullOutline className='-mt-[.1rem] mr-1'/>Best Seller
+                                                        </span>)}
+                                                    </div>
                                                 </div>
-
-
                                             </div>
                                             
-                                            <div className='w-full flex items-center justify-between'>
-                                                
+                                            <div className='pl-3 pr-0 w-full flex items-center justify-between mb-5'>
+                                                <p className='font-medium lg:text-[1rem] md:text-[.8rem] sm:text-[1rem] text-slate-400'>Duration: <span className='text-primary_nav'>{duration} hrs</span></p>
+                                                <p className='mr-10 font-medium lg:text-[1rem] md:text-[.8rem] sm:text-[1rem] text-primary_nav border border-primary p-2 rounded-[3rem]'>learn more</p>
                                             </div>
 
 
