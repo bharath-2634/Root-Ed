@@ -10,7 +10,7 @@ const navLinks = [
   { name: 'About', href: '/main/about' },
   { name: 'Courses', href: '/main/courses' },
   { name: 'Events', href: '/main/events' },
-  { name: 'Connect', href: '/main/connect' },
+  { name: 'Connect', href: '/main/contact' },
 ];
 
 const NavHeader = () => {
