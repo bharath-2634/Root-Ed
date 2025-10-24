@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/home/home'
+import About from './pages/about/about'
 import HomeLayout from './components/home-view/layout'
 import AuthLayout from './components/auth-view/layout'
 import AdminLayout from './components/admin-view/layout'
@@ -51,6 +52,7 @@ const App = () => {
                             <HomeLayout/>
                           </CheckAuth>}>
               <Route path='home' element={<Home/>}/>
+              <Route path='about' element={<About/>}/>
           </Route>
           <Route path="/admin" element={<CheckAuth isAuthenticated={isAuthenticated} user={user}>
                             <AdminLayout/>
