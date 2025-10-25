@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, BookOpen, Video, Users, TrendingUp, Sparkles, Edit, Trash2, MoreVertical } from 'lucide-react';
+import { Plus, BookOpen, Video, Users, TrendingUp, Sparkles, Edit, Trash2, MoreVertical, ExternalLink } from 'lucide-react';
+import { useNavigate, Link } from 'react-router-dom';
 import AddCourseDialog from '../../components/admin-view/AddCourseDialog';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,6 +9,7 @@ import { createCourse, getAllCourses, getCourseStats, deleteCourse } from '../..
 const Dashboard = () => {
   const [isAddCourseOpen, setIsAddCourseOpen] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   
   const { courses, stats, isLoading } = useSelector((state) => state.admin);
 
@@ -113,8 +115,15 @@ const Dashboard = () => {
 
       {/* Courses List */}
       <div className="w-[90%] bg-white rounded-3xl shadow-xl mb-8">
-        <div className="p-6 md:p-8 border-b border-gray-100">
+        <div className="p-6 md:p-8 border-b border-gray-100 flex justify-between items-center">
           <h2 className="text-2xl md:text-3xl font-bold text-[#131D2D]">All Courses</h2>
+          <Link 
+            to="/admin/courses"
+            className="flex items-center gap-2 px-6 py-3 bg-[#40B47C] text-white rounded-full hover:bg-[#6EC59B] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 font-semibold"
+          >
+            Manage Courses
+            <ExternalLink className="w-4 h-4" />
+          </Link>
         </div>
         <div className="p-6 md:p-8">
           {isLoading ? (
@@ -160,20 +169,7 @@ const Dashboard = () => {
                     
                     {/* Action buttons on hover */}
                     <div className="absolute bottom-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <button 
-                        onClick={() => toast.info('Edit functionality coming soon!')}
-                        className="p-2 bg-white hover:bg-blue-50 text-blue-600 rounded-lg shadow-md hover:shadow-lg transition-all"
-                        title="Edit course"
-                      >
-                        <Edit className="w-4 h-4" />
-                      </button>
-                      <button 
-                        onClick={() => handleDeleteCourse(course._id)}
-                        className="p-2 bg-white hover:bg-red-50 text-red-600 rounded-lg shadow-md hover:shadow-lg transition-all"
-                        title="Delete course"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
+
                     </div>
                   </div>
                   <div className="p-5">

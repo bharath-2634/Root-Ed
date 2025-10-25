@@ -8,7 +8,6 @@ import Login from './pages/auth/login'
 import Register from './pages/auth/register'
 import Dashboard from './pages/admin/dashboard'
 import CoursesList from './pages/admin/courses'
-import Contact from './pages/contact/contact'
 import { useDispatch, useSelector } from 'react-redux'
 import { checkAuth } from './store/auth-slice'
 import { useEffect } from 'react'
@@ -52,7 +51,6 @@ const App = () => {
                             <HomeLayout/>
                           </CheckAuth>}>
               <Route path='home' element={<Home/>}/>
-              <Route path='contact' element={<Contact/>}/>
           </Route>
           <Route path="/admin" element={<CheckAuth isAuthenticated={isAuthenticated} user={user}>
                             <AdminLayout/>
