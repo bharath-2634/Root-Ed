@@ -5,9 +5,7 @@ import OurStory from '@/components/about-view/ourStory'
 import WhyChoose from '@/components/about-view/whyChoose'
 import CareerAI from '@/components/about-view/careerAI'
 import AboutCEO from '@/components/about-view/aboutCEO'
-import OurMission from '@/components/about-view/ourMission'
-import OurVision from '@/components/about-view/ourVision'
-import ClientTestimonials from '@/components/about-view/clientTestimonials'
+import MissionVision from '@/components/about-view/missionVision'
 import TestimonialCarousel from '@/components/common/testimonial'
 import FAQSection from '@/components/common/faq'
 import Footer from '@/components/common/footer'
@@ -24,8 +22,7 @@ const About = () => {
       <WhyChoose/>
       <CareerAI/>
       <AboutCEO/>
-      <OurMission/>
-      <OurVision/>
+      <MissionVision/>
       <TestimonialCarousel/>
       <FAQSection/>
       <Footer/>

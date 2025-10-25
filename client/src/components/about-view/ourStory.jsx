@@ -4,7 +4,7 @@ import storyImage from "../../assets/intro_aboutUs_home.png"
 const OurStory = () => {
   return (
     <section className='w-full px-4 md:px-8 lg:px-16 py-12 lg:py-20 font-poppins'>
-      <div className='md:px-2'>
+      <div className='px-10'>
         
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center'>
           
@@ -16,13 +16,13 @@ const OurStory = () => {
               </span>
             </div>
             
-            <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-[#131D2D] leading-tight'>
+            <h2 className='text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-bold text-[#131D2D] leading-tight'>
               Gateway To <span className='text-primary'>Personal</span><br />
               And Professional<br />
               <span className='text-primary'>Growth</span>
             </h2>
             
-            <p className='text-gray-600 text-base sm:text-lg leading-relaxed'>
+            <p className='text-gray-600 text-base sm:text-lg leading-relaxed text-justify xl:text-2xl'>
               Eduvance was founded with one goal: to make high-quality education accessible to everyone, everywhere. 
               We believe learning should be flexible, affordable, and deeply impactful—empowering individuals to pursue 
               their goals and adapt in an ever-changing world.
