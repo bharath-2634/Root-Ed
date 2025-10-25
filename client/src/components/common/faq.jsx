@@ -5,7 +5,42 @@ const FAQSection = () => {
   // FAQ state management
   const [expandedFAQ, setExpandedFAQ] = useState(null)
 
-  // FAQ data with questions and answers
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [loading, setLoading] = useState(false)
+  const [feedback, setFeedback] = useState(null)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setLoading(true)
+    setFeedback(null)
+
+    try {
+      const res = await fetch('http://localhost:5000/api/mail/send-faq-mail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await res.json()
+
+      if (res.ok) {
+        setFeedback({ type: 'success', message: data.message })
+        setFormData({ name: '', email: '', message: '' })
+      } else {
+        setFeedback({ type: 'error', message: data.error || 'Failed to send message' })
+      }
+    } catch (error) {
+      setFeedback({ type: 'error', message: 'Network error' })
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+
   const faqData = [
     {
       id: 1,
@@ -106,12 +141,15 @@ const FAQSection = () => {
               </h3>
             </div>
 
-            <form className="space-y-4 sm:space-y-6">
+            <form className="space-y-4 sm:space-y-6" >
               {/* Name Input */}
               <div>
                 <input
                   type="text"
+                  name="name"
                   placeholder="Your Name...."
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-[#6EC59B]/10 border border-[#6EC59B]/20 rounded-xl sm:rounded-2xl text-gray-700 placeholder-gray-500 focus:outline-none focus:border-[#6EC59B] transition-colors duration-300 text-sm sm:text-base"
                 />
               </div>
@@ -120,7 +158,10 @@ const FAQSection = () => {
               <div>
                 <input
                   type="email"
+                  name="email"
                   placeholder="Your Email...."
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-[#6EC59B]/10 border border-[#6EC59B]/20 rounded-xl sm:rounded-2xl text-gray-700 placeholder-gray-500 focus:outline-none focus:border-[#6EC59B] transition-colors duration-300 text-sm sm:text-base"
                 />
               </div>
@@ -128,20 +169,31 @@ const FAQSection = () => {
               {/* Message Textarea */}
               <div>
                 <textarea
+                  name="message"
                   rows="4"
                   placeholder="Enter your message...."
                   className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-[#6EC59B]/10 border border-[#6EC59B]/20 rounded-xl sm:rounded-2xl text-gray-700 placeholder-gray-500 focus:outline-none focus:border-[#6EC59B] transition-colors duration-300 resize-none text-sm sm:text-base sm:rows-6"
+                  value={formData.message}
+                  onChange={handleChange}
                 ></textarea>
               </div>
 
               {/* Submit Button */}
               <div>
                 <button
-                  type="submit"
-                  className="w-full bg-[#131D2D] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold hover:bg-black transition-all duration-300 hover:transform hover:scale-[1.02] shadow-lg text-sm sm:text-base"
-                >
-                  Submit Question
-                </button>
+                type="submit"
+                disabled={loading}
+                onClick={handleSubmit}
+                className="w-full bg-primary_nav text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold hover:bg-black transition-all duration-300 hover:transform hover:scale-[1.02] shadow-lg"
+              >
+                {loading ? "Sending..." : "Submit Question"}
+              </button>
+
+              {feedback && (
+                <p className={`text-sm mt-2 ${feedback.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
+                  {feedback.message}
+                </p>
+              )}
               </div>
             </form>
           </div>

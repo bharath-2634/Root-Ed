@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const authRouter = require('./routers/auth/auth-router');
 const courseRouter = require('./routers/course/course-router');
+const mailRouter  = require('./routers/mail/mail-router');
 
 
 mongoose
@@ -36,6 +37,8 @@ app.use(cookieParser());
 app.use(express.json());
 app.use('/api/auth',authRouter);
 app.use('/api/course',courseRouter);
+app.use("/api/mail", mailRouter);
+
 
 
 

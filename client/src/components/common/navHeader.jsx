@@ -4,6 +4,7 @@ import logo from "../../assets/logo.png";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logoutUser } from '@/store/auth-slice';
+import { NavLink } from "react-router-dom";
 
 const navLinks = [
   { name: 'Home', href: '/main/home' },
@@ -23,6 +24,7 @@ const NavHeader = () => {
 
   const handleLinkClick = (name) => {
     setActiveLink(name);
+    console.log("active link", activeLink);
     setIsOpen(false); 
   };
 
@@ -106,24 +108,19 @@ const NavHeader = () => {
           <div className="hidden lg:flex md:flex flex-grow justify-center">
             <div className="bg-primary_nav rounded-full p-[.8rem] space-x-2 ">
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  // Call the new click handler
-                  onClick={() => handleLinkClick(link.name)} 
-                  className={`
-                    lg:text-[1rem] md:[.6rem] text-[.9rem] transition-all duration-200 
-                    px-4 py-2 rounded-full whitespace-nowrap md:font-medium
-                    ${
-                      // Check if the current link name matches the activeLink state
-                      activeLink === link.name
-                        ? 'bg-white text-slate-800' // Active link style
-                        : 'text-white hover:text-emerald-400' // Inactive link style
-                    }
-                  `}
-                >
-                  {link.name}
-                </a>
+                <NavLink
+    key={link.name}
+    to={link.href}
+    className={({ isActive }) =>
+      `
+      lg:text-[1rem] md:[.6rem] text-[.9rem] transition-all duration-200 
+      px-4 py-2 rounded-full whitespace-nowrap md:font-medium
+      ${isActive ? 'bg-white text-slate-800' : 'text-white hover:text-emerald-400'}
+      `
+    }
+  >
+    {link.name}
+  </NavLink>
               ))}
             </div>
           </div>

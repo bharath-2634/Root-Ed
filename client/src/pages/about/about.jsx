@@ -8,11 +8,14 @@ import AboutCEO from '@/components/about-view/aboutCEO'
 import OurMission from '@/components/about-view/ourMission'
 import OurVision from '@/components/about-view/ourVision'
 import ClientTestimonials from '@/components/about-view/clientTestimonials'
+import TestimonialCarousel from '@/components/common/testimonial'
+import FAQSection from '@/components/common/faq'
+import Footer from '@/components/common/footer'
 
 
 const About = () => {
   return (
-    <div className='w-full flex flex-col items-center justify-center py-3 gap-6'>
+    <div className='w-full flex flex-col items-center justify-center  gap-6'>
       <div className="w-full">
         <NavHeader/>
       </div>
@@ -23,7 +26,9 @@ const About = () => {
       <AboutCEO/>
       <OurMission/>
       <OurVision/>
-      <ClientTestimonials/>
+      <TestimonialCarousel/>
+      <FAQSection/>
+      <Footer/>
 
     </div>
   )

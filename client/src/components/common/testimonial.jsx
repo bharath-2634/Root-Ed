@@ -98,10 +98,8 @@ const TestimonialCarousel = () => {
     <section className="py-16 bg-white overflow-hidden relative font-poppins px-20">
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
-        <div className="inline-block px-4 py-4 mb-4 bg-primary_nav text-primary text-xs font-medium rounded-full">
-          Rated 4/5 by over 1 Lakh users
-        </div>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
+
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 lg:text-[3rem] ">
           Words of praise from others <br /> about our presence.
         </h2>
       </div>
