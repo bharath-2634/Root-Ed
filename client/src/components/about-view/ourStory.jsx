@@ -4,7 +4,7 @@ import storyImage from "../../assets/intro_aboutUs_home.png"
 const OurStory = () => {
   return (
     <section className='w-full px-4 md:px-8 lg:px-16 py-12 lg:py-20 font-poppins'>
-      <div className='md:px-20'>
+      <div className='md:px-2'>
         
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center'>
           

@@ -4,7 +4,7 @@ import { GraduationCap, Award, Target, BookOpen, ArrowRight } from 'lucide-react
 const WhyChoose = () => {
   return (
     <section className='w-full px-4 md:px-8 lg:px-16 py-12 lg:py-20 font-poppins bg-white'>
-      <div className='md:px-20'>
+      <div className='md:px-2'>
         
         {/* Section Header */}
         <div className='mb-12 text-center'>

@@ -180,6 +180,7 @@ const googleAuth = async (req, res) => {
                 email : payload.email,
                 avatar_url: payload.picture,
                 authType: "google",
+                // MCID, 
             });
             await user.save();
         }
@@ -190,6 +191,7 @@ const googleAuth = async (req, res) => {
               userId: user._id,
               email: user.email,
               role: user.role,
+            //   MCID: user.MCID,
           },
           "CLIENT_SECRET_KEY",
           { expiresIn: "7d" }
@@ -204,6 +206,7 @@ const googleAuth = async (req, res) => {
             userName: user.userName,
             email: user.email,
             role: user.role,
+            // MCID: user.MCID,
             avatar_url: user.avatar_url,
         },
     });
