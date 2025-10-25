@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Upload, Star } from 'lucide-react';
 
-const AddCourseDialog = ({ isOpen, onClose, onAdd }) => {
+const AddCourseDialog = ({ isOpen, onClose, onAdd, editMode = false, courseData = null }) => {
   const [courseType, setCourseType] = useState('recorded');
   const [formData, setFormData] = useState({
     title: '',
@@ -21,6 +21,48 @@ const AddCourseDialog = ({ isOpen, onClose, onAdd }) => {
     maxParticipants: '',
   });
 
+  // Load course data when in edit mode
+  useEffect(() => {
+    if (editMode && courseData) {
+      setCourseType(courseData.type || 'recorded');
+      setFormData({
+        title: courseData.title || '',
+        instructor: courseData.instructor || '',
+        rating: courseData.rating || '4.5',
+        sales: courseData.sales || '1k',
+        image: courseData.image || '',
+        bestSeller: courseData.bestSeller || false,
+        description: courseData.description || '',
+        price: courseData.price || '',
+        duration: courseData.duration || '',
+        level: courseData.level || 'beginner',
+        category: courseData.category || '',
+        scheduleDate: courseData.scheduleDate ? new Date(courseData.scheduleDate).toISOString().split('T')[0] : '',
+        scheduleTime: courseData.scheduleTime || '',
+        maxParticipants: courseData.maxParticipants || '',
+      });
+    } else if (!isOpen) {
+      // Reset form when dialog closes
+      setCourseType('recorded');
+      setFormData({
+        title: '',
+        instructor: '',
+        rating: '4.5',
+        sales: '1k',
+        image: '',
+        bestSeller: false,
+        description: '',
+        price: '',
+        duration: '',
+        level: 'beginner',
+        category: '',
+        scheduleDate: '',
+        scheduleTime: '',
+        maxParticipants: '',
+      });
+    }
+  }, [editMode, courseData, isOpen]);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -32,23 +74,6 @@ const AddCourseDialog = ({ isOpen, onClose, onAdd }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onAdd({ ...formData, type: courseType });
-    // Reset form
-    setFormData({
-      title: '',
-      instructor: '',
-      rating: '4.5',
-      sales: '1k',
-      image: '',
-      bestSeller: false,
-      description: '',
-      price: '',
-      duration: '',
-      level: 'beginner',
-      category: '',
-      scheduleDate: '',
-      scheduleTime: '',
-      maxParticipants: '',
-    });
   };
 
   if (!isOpen) return null;
@@ -58,7 +83,9 @@ const AddCourseDialog = ({ isOpen, onClose, onAdd }) => {
       <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         {/* Header */}
         <div className="flex items-center justify-between p-6 md:p-8 border-b border-gray-100 sticky top-0 bg-white rounded-t-3xl">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#131D2D]">Add New Course</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-[#131D2D]">
+            {editMode ? 'Edit Course' : 'Add New Course'}
+          </h2>
           <button
             onClick={onClose}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors"
@@ -355,7 +382,7 @@ const AddCourseDialog = ({ isOpen, onClose, onAdd }) => {
               type="submit"
               className="flex-1 px-6 py-3 bg-[#40B47C] text-white font-semibold rounded-full hover:bg-[#6EC59B] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
             >
-              Add Course
+              {editMode ? 'Update Course' : 'Add Course'}
             </button>
           </div>
         </form>

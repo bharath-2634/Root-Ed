@@ -8,6 +8,7 @@ import Login from './pages/auth/login'
 import Register from './pages/auth/register'
 import Dashboard from './pages/admin/dashboard'
 import CoursesList from './pages/admin/courses'
+import PostsList from './pages/admin/posts'
 import { useDispatch, useSelector } from 'react-redux'
 import { checkAuth } from './store/auth-slice'
 import { useEffect } from 'react'
@@ -57,6 +58,7 @@ const App = () => {
                           </CheckAuth>}>
               <Route path='dashboard' element={<Dashboard/>}/>
               <Route path='courses' element={<CoursesList/>}/>
+              <Route path='posts' element={<PostsList/>}/>
           </Route>
       </Routes>
     </div>
