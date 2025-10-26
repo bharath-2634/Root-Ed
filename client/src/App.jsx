@@ -13,6 +13,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { checkAuth } from './store/auth-slice'
 import { useEffect } from 'react'
 import CheckAuth from './components/common/checkAuth';
+import Contact from './pages/contact/contact'
+
 
 
 const App = () => {
@@ -53,6 +55,8 @@ const App = () => {
                           </CheckAuth>}>
               <Route path='home' element={<Home/>}/>
               <Route path='about' element={<About/>}/>
+              <Route path='connect' element={<Contact/>}/>
+              
           </Route>
           <Route path="/admin" element={<CheckAuth isAuthenticated={isAuthenticated} user={user}>
                             <AdminLayout/>

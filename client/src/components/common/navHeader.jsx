@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 const navLinks = [
   { name: 'Home', href: '/main/home' },
   { name: 'About', href: '/main/about' },
-  { name: 'Courses', href: '/main/courses' },
+  // { name: 'Courses', href: '/main/courses' },
   { name: 'Events', href: '/main/events' },
   { name: 'Connect', href: '/main/connect' },
 ];
@@ -96,7 +96,7 @@ const NavHeader = () => {
           </div>)
       }
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           
           {/* Logo */}
@@ -106,21 +106,21 @@ const NavHeader = () => {
 
           {/* Desktop Navigation Links (Hidden on small screens) */}
           <div className="hidden lg:flex md:flex flex-grow justify-center">
-            <div className="bg-primary_nav rounded-full p-[.8rem] space-x-2 ">
+            <div className="bg-primary_nav rounded-full p-[1rem] space-x-2 ">
               {navLinks.map((link) => (
                 <NavLink
-    key={link.name}
-    to={link.href}
-    className={({ isActive }) =>
-      `
-      lg:text-[1rem] md:[.6rem] text-[.9rem] transition-all duration-200 
-      px-4 py-2 rounded-full whitespace-nowrap md:font-medium
-      ${isActive ? 'bg-white text-slate-800' : 'text-white hover:text-emerald-400'}
-      `
-    }
-  >
-    {link.name}
-  </NavLink>
+                  key={link.name}
+                  to={link.href}
+                  className={({ isActive }) =>
+                    `
+                    lg:text-[1rem] md:[.6rem] text-[.9rem] transition-all duration-200 
+                    px-4 py-2 rounded-full whitespace-nowrap md:font-medium
+                    ${isActive ? 'bg-white text-slate-800' : 'text-white hover:text-emerald-400'}
+                    `
+                  }
+                >
+                  {link.name}
+                </NavLink>
               ))}
             </div>
           </div>
