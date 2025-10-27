@@ -89,7 +89,7 @@ const NavHeader = () => {
 
 
   return (
-    <nav className="bg-white font-poppins ">
+    <nav className="bg-white font-poppins ml-12">
 
       {
         showLogoutPopUp ? (ConfirmationModal()) : (<div>

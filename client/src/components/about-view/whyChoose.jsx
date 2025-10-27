@@ -8,8 +8,8 @@ const WhyChoose = () => {
         
         {/* Section Header */}
         <div className='mb-12 text-center'>
-          <h2 className='text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-[#131D2D] leading-tight'>
-            Why <span className='text-primary'>expert.io</span> Is The Right Choice for You
+          <h2 className='text-3xl sm:text-4xl md:text-4xl lg:text-4xl font-bold text-[#131D2D] leading-tight'>
+            Why <span className='text-primary'>Root-Ed</span> Is The Right Choice for You
           </h2>
         </div>
 
@@ -21,10 +21,10 @@ const WhyChoose = () => {
             <div className='w-14 h-14 rounded-full flex items-center justify-center mb-6 bg-white shadow-sm'>
               <GraduationCap className='w-7 h-7 text-gray-700' />
             </div>
-            <h3 className='text-xl md:text-2xl xl:text-3xl font-bold mb-4 text-[#131D2D]'>
+            <h3 className='text-xl md:text-2xl xl:text-2xl font-semibold mb-4 text-[#131D2D]'>
               Expert Instructors
             </h3>
-            <p className='text-gray-600 text-sm md:text-base xl:text-xl leading-relaxed'>
+            <p className='text-gray-600 text-sm md:text-base xl:text-[1rem] leading-relaxed'>
               Learn from top industry professionals who bring years of real-world experience to the classroom, providing you with the latest tools, techniques, and insights needed to excel in your field.
             </p>
           </div>
@@ -34,23 +34,23 @@ const WhyChoose = () => {
             <div className='w-14 h-14 rounded-full flex items-center justify-center mb-6 bg-white shadow-sm'>
               <Award className='w-7 h-7 text-gray-700' />
             </div>
-            <h3 className='text-xl md:text-2xl xl:text-3xl font-bold mb-4 text-[#131D2D]'>
+            <h3 className='text-xl md:text-2xl xl:text-2xl font-semibold mb-4 text-[#131D2D]'>
               Career-Boost Certify
             </h3>
-            <p className='text-gray-600 text-sm md:text-base xl:text-xl leading-relaxed'>
+            <p className='text-gray-600 text-sm md:text-base xl:text-[1rem] leading-relaxed'>
               Earn certifications that are highly regarded by employers, helping you to enhance your resume, gain industry recognition, and open doors to new career opportunities.
             </p>
           </div>
 
           {/* Card 3: Flexible Learning Schedules - Deep Blue Highlight */}
-          <div className='bg-[#0C2D57] text-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col md:col-span-2 lg:col-span-1 lg:row-span-2'>
+          <div className='bg-primary_nav text-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col md:col-span-2 lg:col-span-1 lg:row-span-2'>
             <div className='w-14 h-14 rounded-full flex items-center justify-center mb-6 bg-white/20'>
               <BookOpen className='w-7 h-7 text-white' />
             </div>
-            <h3 className='text-xl md:text-2xl font-bold mb-4 xl:text-3xl'>
+            <h3 className='text-xl md:text-2xl font-semibold mb-4 xl:text-3xl'>
               Flexible Learning Schedules
             </h3>
-            <p className='text-white/90 text-sm md:text-base xl:text-xl leading-relaxed mb-4'>
+            <p className='text-gray-300 text-sm md:text-base xl:text-[1.2rem] leading-relaxed mb-4'>
               At expert.io, we understand the importance of balancing learning with a busy lifestyle. That's why our courses are available on-demand, allowing you to learn at your own pace, anytime and anywhere.
             </p>
             <p className='text-white/80 text-sm md:text-base xl:text-xl leading-relaxed mb-6'>
@@ -59,7 +59,7 @@ const WhyChoose = () => {
              <p className='text-white/80 text-sm md:text-base xl:text-xl leading-relaxed mb-6'>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla et quo, aspernatur ducimus officia, inventore repellat possimus aperiam earum quasi a vitae cumque velit minus eius! Consectetur officia aperiam repudiandae.
             </p>
-            <button className='bg-[#00C16A] hover:bg-[#00a859] text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 transition-all duration-300 hover:shadow-lg group mt-auto w-fit'>
+            <button className='bg-primary hover:bg-[#00a859] text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 transition-all duration-300 hover:shadow-lg group mt-auto w-fit'>
               Start Free Trial
               <ArrowRight className='w-5 h-5 group-hover:translate-x-1 transition-transform' />
             </button>
@@ -70,7 +70,7 @@ const WhyChoose = () => {
             <div className='w-14 h-14 rounded-full flex items-center justify-center mb-6 bg-white shadow-sm'>
               <Target className='w-7 h-7 text-gray-700' />
             </div>
-            <h3 className='text-xl md:text-2xl xl:text-3xl font-bold mb-4 text-[#131D2D]'>
+            <h3 className='text-xl md:text-2xl xl:text-3xl font-semibold mb-4 text-[#131D2D]'>
               100+ High Impact Courses
             </h3>
             <p className='text-gray-600 text-sm md:text-base xl:text-xl leading-relaxed'>

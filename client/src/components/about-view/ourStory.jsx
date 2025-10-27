@@ -16,10 +16,10 @@ const OurStory = () => {
               </span>
             </div>
             
-            <h2 className='text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-bold text-[#131D2D] leading-tight'>
-              Gateway To <span className='text-primary'>Personal</span><br />
-              And Professional<br />
-              <span className='text-primary'>Growth</span>
+            <h2 className='text-3xl sm:text-4xl lg:text-4xl xl:text-5xl font-semibold text-primary_nav'>
+              Gateway To <span className='text-primary'>Personal </span>
+              And Professional 
+              <span className='text-primary'> Growth</span>
             </h2>
             
             <p className='text-gray-600 text-base sm:text-lg leading-relaxed text-justify xl:text-2xl'>
