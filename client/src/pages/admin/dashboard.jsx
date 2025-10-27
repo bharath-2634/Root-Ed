@@ -2,15 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Plus, BookOpen, Video, Users, TrendingUp, Sparkles, Edit, Trash2, MoreVertical, FileText, Eye, MessageSquare } from 'lucide-react';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllCourses, getCourseStats, deleteCourse } from '../../store/admin-slice';
-import { getAllPosts, getPostStats, deletePost } from '../../store/post-slice';
+import { getAllCourses, getCourseStats, deleteCourse, getAllPosts, getPostStats, deletePost } from '../../store/admin-slice';
 import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
   
-  const { courses, stats, isLoading } = useSelector((state) => state.admin);
-  const { posts, stats: postStats, isLoading: postLoading } = useSelector((state) => state.post);
+  const { courses, stats, posts, postStats, isLoading } = useSelector((state) => state.admin);
 
   // Fetch courses and posts on component mount
   useEffect(() => {
@@ -276,7 +274,7 @@ const Dashboard = () => {
           </Link>
         </div>
         <div className="p-6 md:p-8">
-          {postLoading ? (
+          {isLoading ? (
             <div className="text-center py-16">
               <div className="inline-flex p-6 bg-gray-50 rounded-full mb-6">
                 <FileText className="w-16 h-16 text-gray-400 animate-pulse" />

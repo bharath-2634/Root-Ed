@@ -3,7 +3,7 @@ import { ArrowLeft, Edit, Trash2, Eye, Heart, Calendar, Sparkles, Plus } from 'l
 import { Link, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllPosts, deletePost, createPost, updatePost, getPostStats } from '../../store/post-slice';
+import { getAllPosts, deletePost, createPost, updatePost, getPostStats } from '../../store/admin-slice';
 import AddPostDialog from '../../components/admin-view/AddPostDialog';
 
 const PostsList = () => {
@@ -14,7 +14,7 @@ const PostsList = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   
-  const { posts, isLoading } = useSelector((state) => state.post);
+  const { posts, isLoading } = useSelector((state) => state.admin);
 
   useEffect(() => {
     dispatch(getAllPosts());
