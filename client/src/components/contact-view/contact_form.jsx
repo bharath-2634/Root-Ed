@@ -57,26 +57,31 @@ const ContactForm = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
           
           <div className='bg-primary_nav rounded-2xl sm:rounded-3xl h-full flex flex-col items-start justify-between lg:w-full md:w-[90%] w-full lg:p-6 sm:p-8 p-3'>
-              <h2 className='lg:text-[1.4rem] md:text-[1.8rem] sm:text-[1.4rem] text-[1.2rem] font-medium text-white text-start '>Discover the Talk to an <span className='text-primary'>Expert</span> today</h2>
+              <div>
+                <h2 className='lg:text-[1.4rem] md:text-[1.8rem] sm:text-[1.4rem] text-[1.2rem] font-medium text-white text-start'>Discover the Talk to an <span className='text-primary'>Expert</span> today</h2>
+                <p className='text-gray-400 text-sm md:text-base xl:text-[1rem] leading-relaxed text-start mt-8'>
+                    Learn from top industry professionals who bring years of real-world experience to the classroom, providing 
+                </p>
+              </div>
               <div>
                   <div className='w-full flex flex-col items-start justify-start gap-3'>
                       <div className='w-full flex items-center justify-start gap-3 lg:ml-10 md:ml-10 sm:ml-0 ml-0'>
                         <VscActivateBreakpoints className='text-primary text-[1.6rem]'/>
-                        <h2 className='lg:text-[1.4rem] md:text-[1.2rem] sm:text-[1rem] text-[1rem] font-medium text-white text-start m-6'>Discover the Talk to an today</h2>
+                        <h2 className='lg:text-[1.2rem] md:text-[1.2rem] sm:text-[1rem] text-[1rem] font-regular text-white text-start m-6'>Discover the Talk to an today</h2>
                       </div>
                   </div>
 
                   <div className='w-full flex flex-col items-start justify-center gap-3'>
                       <div className='w-full flex items-center justify-start gap-3 lg:ml-10 md:ml-10 sm:ml-0 ml-0'>
                         <VscActivateBreakpoints className='text-primary text-[1.6rem]'/>
-                        <h2 className='lg:text-[1.4rem] md:text-[1.2rem] sm:text-[1rem] text-[1rem] font-medium text-white text-start m-6'>Discover the Talk to an today</h2>
+                        <h2 className='lg:text-[1.2rem] md:text-[1.2rem] sm:text-[1rem] text-[1rem] font-regular text-white text-start m-6'>Discover the Talk to an today</h2>
                       </div>
                   </div>
 
                   <div className='w-full flex flex-col items-start justify-center gap-3'>
                       <div className='w-full flex items-center justify-start gap-3 lg:ml-10 md:ml-10 sm:ml-0 ml-0'>
                         <VscActivateBreakpoints className='text-primary text-[1.6rem]'/>
-                        <h2 className='lg:text-[1.4rem] md:text-[1.2rem] sm:text-[1rem] text-[1rem] font-medium text-white text-start m-6'>Discover the Talk to an today</h2>
+                        <h2 className='lg:text-[1.2rem] md:text-[1.2rem] sm:text-[1rem] text-[1rem] font-regular text-white text-start m-6'>Discover the Talk to an today</h2>
                       </div>
                   </div>
 

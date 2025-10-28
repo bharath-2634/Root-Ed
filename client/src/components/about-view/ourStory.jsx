@@ -3,18 +3,18 @@ import storyImage from "../../assets/intro_aboutUs_home.png"
 
 const OurStory = () => {
   return (
-    <section className='w-full px-4 md:px-8 lg:px-16 py-12 lg:py-20 font-poppins'>
+    <section className='w-full px-4 md:px-8 lg:px-16 py-12 lg:py-20 font-poppins xl:mt-[22rem] md:mt-[18rem] sm:mt-[10rem] mt-[3rem]'>
       <div className='px-10'>
         
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start justify-between '>
           
           {/* Left Content */}
           <div className='space-y-6'>
-            <div className='inline-block bg-green-400/30 p-1 rounded-[.5rem]'>
+            {/* <div className='inline-block bg-green-400/30 p-1 rounded-[.5rem]'>
               <span className='text-primary font-semibold text-xs sm:text-base tracking-wide uppercase'>
                 Our Story
               </span>
-            </div>
+            </div> */}
             
             <h2 className='text-3xl sm:text-4xl lg:text-4xl xl:text-5xl font-semibold text-primary_nav'>
               Gateway To <span className='text-primary'>Personal </span>
@@ -22,7 +22,7 @@ const OurStory = () => {
               <span className='text-primary'> Growth</span>
             </h2>
             
-            <p className='text-gray-600 text-base sm:text-lg leading-relaxed text-justify xl:text-2xl'>
+            <p className='text-gray-600 text-base sm:text-[1.1rem] leading-relaxed text-justify xl:text-xl'>
               Eduvance was founded with one goal: to make high-quality education accessible to everyone, everywhere. 
               We believe learning should be flexible, affordable, and deeply impactful—empowering individuals to pursue 
               their goals and adapt in an ever-changing world.
