@@ -14,6 +14,7 @@ import { checkAuth } from './store/auth-slice'
 import { useEffect } from 'react'
 import CheckAuth from './components/common/checkAuth';
 import Contact from './pages/contact/contact'
+import Events from './pages/events/events'
 
 
 
@@ -55,8 +56,8 @@ const App = () => {
                           </CheckAuth>}>
               <Route path='home' element={<Home/>}/>
               <Route path='about' element={<About/>}/>
+              <Route path='events' element={<Events/>}/>
               <Route path='connect' element={<Contact/>}/>
-              
           </Route>
           <Route path="/admin" element={<CheckAuth isAuthenticated={isAuthenticated} user={user}>
                             <AdminLayout/>
