@@ -3,6 +3,7 @@ import intro_img from "../../assets/intro_img.jpg"
 import { ArrowRight, Users, Check } from 'lucide-react';
 import { motion } from "framer-motion";
 import { useNavigate } from 'react-router-dom';
+import QualityServiceSection from '../common/diagonalImage';
 
 const containerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -42,6 +43,7 @@ const EducationSystemIntro = () => {
                             className='lg:w-[80%] md:w-[60%] sm:w-[60%] w-[70%] h-auto object-contain rounded-3xl'
                             onError={(e) => e.target.style.display='none'}
                         />
+                        {/* <QualityServiceSection/> */}
                     </div>
 
                     <div className='w-full lg:w-1/2  lg:pt-0 font-poppins flex flex-col items-center justify-center gap-3'>

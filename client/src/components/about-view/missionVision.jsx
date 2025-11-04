@@ -21,13 +21,13 @@ const MissionVision = () => {
       <section className='w-full px-4 md:px-8 lg:px-16 py-12 lg:py-20 font-poppins bg-white'>
         <div className='p-10'>
           
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-14'>
             
             {/* Left - Images Section */}
             <div className='relative'>
               {/* Main Background Image */}
               <div className='relative w-full h-full rounded-3xl '>
-                  <img src={missionImg} alt="Our Mission" className="w-full h-full " />
+                  <img src={missionImg} alt="Our Mission" className="w-full h-[80%] " />
               </div>
             </div>
 
@@ -100,7 +100,7 @@ const MissionVision = () => {
             <div className='relative lg:order-2 order-1'>
               {/* Main Background Image */}
               <div className='relative w-full rounded-3xl h-full'>
-                <img src={visionImg} alt="Our Vision" className="w-full h-full " />
+                <img src={visionImg} alt="Our Vision" className="w-full h-[80%] " />
               </div>
             </div>
 

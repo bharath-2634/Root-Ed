@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import thumbnail_img from "../../assets/thumbnail_img.jpg";
+import thumbnail_img from "../../assets/thumbnail_img.jpeg";
 
 
 const EventsVideo = () => {

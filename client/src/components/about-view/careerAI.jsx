@@ -1,6 +1,6 @@
 import React from 'react'
 import { BookOpen, Award, Users, TrendingUp } from 'lucide-react'
-import img from "../../assets/about_carrer.png"
+import img from "../../assets/about_carrer.jpeg"
 import { useNavigate } from 'react-router-dom'
 
 const CareerAI = () => {
