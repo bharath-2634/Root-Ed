@@ -4,6 +4,8 @@ import AddCourseDialog from '../../components/admin-view/AddCourseDialog';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { createCourse, getAllCourses, getCourseStats, deleteCourse } from '../../store/admin-slice';
+import AddPostDialog from '@/components/admin-view/AddPostDialog';
+import { addPost } from '@/store/post-slice';
 
 const Dashboard = () => {
   const [isAddCourseOpen, setIsAddCourseOpen] = useState(false);
@@ -40,26 +42,40 @@ const Dashboard = () => {
     }
   };
 
+  // post Addition 
+  const [openPostDia,setOpenPostDia] = useState(false);
+
+  const handleAddPost = async (newPost) => {
+    const result = await dispatch(addPost(newPost));
+    if (result.payload?.success) {
+      setOpenPostDia(false);
+      toast.success('Posts added successfully!');
+      // dispatch(getCourseStats()); // Refresh stats
+    } else {
+      toast.error(result.payload?.message || 'Failed to add Posts');
+    }
+  }
+
   return (
     <div className="w-full flex flex-col items-center justify-center p-3 gap-8 font-poppins">
       {/* Header Section with gradient background */}
       <div className="w-[90%] bg-gradient-to-br from-[#6EC59B] to-[#40B47C] rounded-3xl p-8 md:p-12 shadow-2xl mt-6">
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
-          <div className="text-white">
-            <div className="flex items-center gap-3 mb-3">
-              <Sparkles className="w-8 h-8" />
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">Course Management</h1>
-            </div>
-            <p className="text-white/90 text-lg md:text-xl">
-              Add and manage your recorded classes and live workshops
-            </p>
-          </div>
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-6">
+          
           <button
             onClick={() => setIsAddCourseOpen(true)}
             className="flex items-center gap-2 px-8 py-4 bg-white text-[#131D2D] rounded-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 font-semibold text-lg whitespace-nowrap"
           >
             <Plus className="w-6 h-6" />
             Add Course
+          </button>
+
+          <button
+            onClick={() => setOpenPostDia(true)}
+            className="flex items-center gap-2 px-8 py-4 bg-white text-[#131D2D] rounded-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 font-semibold text-lg whitespace-nowrap"
+          >
+            <Plus className="w-6 h-6" />
+            Add Posts
           </button>
         </div>
       </div>
@@ -202,6 +218,12 @@ const Dashboard = () => {
         isOpen={isAddCourseOpen}
         onClose={() => setIsAddCourseOpen(false)}
         onAdd={handleAddCourse}
+      />
+
+      <AddPostDialog
+        isOpen={openPostDia}
+        onClose={() => setOpenPostDia(false)}
+        onAdd={handleAddPost}
       />
     </div>
   );

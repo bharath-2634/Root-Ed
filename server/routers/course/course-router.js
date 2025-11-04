@@ -12,11 +12,6 @@ const { authMiddleware } = require("../../controllers/auth/auth-controller");
 
 const router = express.Router();
 
-// All course routes require authentication
-// Only admins should be able to create, update, delete courses
-// Students and tutors can view courses
-
-// Create a new course (Admin only)
 router.post("/create", authMiddleware, createCourse);
 
 // Get all courses (Anyone authenticated)

@@ -8,10 +8,12 @@ const CheckAuth = ({ isAuthenticated, user, children }) => {
 
     if(location.pathname==="/") {
        if(isAuthenticated) {
+
         if(user?.role==="Admin") {
           return <Navigate to="/admin/dashboard"/>
         }
-        if(user?.role === "Student") {
+
+        else if(user?.role === "Student") {
           return <Navigate to="/main/home"/>
         }
         // for tutors
@@ -29,7 +31,7 @@ const CheckAuth = ({ isAuthenticated, user, children }) => {
           if(user?.role==="Admin") {
             return <Navigate to="/admin/dashboard"/>
           }
-          if(user?.role === "Student") {
+          else if(user?.role === "Student") {
             return <Navigate to="/main/home"/>
           }
       }
@@ -43,7 +45,7 @@ const CheckAuth = ({ isAuthenticated, user, children }) => {
           if(user?.role==="Admin") {
             return <Navigate to="/admin/dashboard"/>
           }
-          if(user?.role === "Student") {
+          else if(user?.role === "Student") {
             return <Navigate to="/main/home"/>
           }
       }
