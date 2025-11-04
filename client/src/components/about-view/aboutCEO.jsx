@@ -1,9 +1,12 @@
 import React from 'react'
 import { Briefcase, Instagram, Linkedin, Twitter, ArrowRight } from 'lucide-react'
 import img from "../../assets/ceo.png"
+import { useNavigate } from 'react-router-dom'
 
 
 const AboutCEO = () => {
+  const navigate = useNavigate();
+
   return (
     <section className='w-full px-4 md:px-8 lg:px-16 py-12 lg:py-20 font-poppins bg-white'>
       <div className='p-10'>
@@ -42,7 +45,7 @@ const AboutCEO = () => {
             {/* CTA and Social Links */}
             <div className='flex flex-col sm:flex-row items-start sm:items-center gap-6'>
               {/* Connect Button */}
-              <button className='bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-4 rounded-full flex items-center gap-3 transition-all duration-300 hover:shadow-lg hover:scale-105 group'>
+              <button className='bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-4 rounded-full flex items-center gap-3 transition-all duration-300 hover:shadow-lg hover:scale-105 group' onClick={()=>navigate("/main/connect")}>
                 Lets Connect
                 <ArrowRight className='w-5 h-5 group-hover:translate-x-1 transition-transform' />
               </button>

@@ -6,8 +6,12 @@ import { TiTick } from "react-icons/ti";
 import { ArrowRight, Users, Check } from 'lucide-react';
 import { FaUsers } from "react-icons/fa";
 import lapView from "../../assets/lap_view_img.png";
+import { useNavigate } from 'react-router-dom';
 
 const HomeDash = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className='relative w-[90%] min-h-screen sm:px-6 lg:px-8 
                  flex flex-col items-center justify-center 
@@ -38,6 +42,7 @@ const HomeDash = () => {
       transition-all duration-300 ease-in-out
       hover:-translate-y-1 hover:shadow-2xl
     "
+    onClick={()=>navigate("/auth/login")}
   >
     Start now
     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 ml-2 text-primary_nav" />
@@ -53,6 +58,7 @@ const HomeDash = () => {
       transition-all duration-300 ease-in-out
       hover:-translate-y-1 hover:shadow-2xl
     "
+    onClick={()=>navigate("/main/connect")}
   >
     Join now
     <FaUsers className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 ml-2 text-white" />

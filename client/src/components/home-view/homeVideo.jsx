@@ -25,12 +25,12 @@ const HomeVideo = () => {
               src={thumbnail_img}
               alt='Video thumbnail'
               className='w-full h-full object-cover cursor-pointer'
-              onClick={() => setIsPlaying(true)}
+              onClick={() => setIsPlaying(false)}
             />
 
             {/* Play Button Overlay */}
             <button
-              onClick={() => setIsPlaying(true)}
+              onClick={() => setIsPlaying(false)}
               className='absolute inset-0 flex items-center justify-center'
             >
               <div className='bg-white/80 hover:bg-white text-primary rounded-full p-6 transition'>

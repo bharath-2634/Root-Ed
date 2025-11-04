@@ -2,6 +2,7 @@ import React from 'react'
 import intro_img from "../../assets/intro_img.jpg"
 import { ArrowRight, Users, Check } from 'lucide-react';
 import { motion } from "framer-motion";
+import { useNavigate } from 'react-router-dom';
 
 const containerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -16,6 +17,9 @@ const containerVariants = {
 };
 
 const EducationSystemIntro = () => {
+
+  const navigate = useNavigate();
+
   return (
     <motion.section 
         initial="hidden"
@@ -65,6 +69,7 @@ const EducationSystemIntro = () => {
                               transition-all duration-300 ease-in-out
                               hover:-translate-y-1 hover:shadow-2xl sm:-ml-6 lg:ml-6 md:ml-6 mt-10
                             "
+                           onClick={()=>navigate("/auth/login")}
                           >
                             Start now
                             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 ml-2 text-white" />

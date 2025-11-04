@@ -1,6 +1,7 @@
 import React from 'react'
 import { BookOpen, Award, Users, TrendingUp } from 'lucide-react'
 import img from "../../assets/about_carrer.png"
+import { useNavigate } from 'react-router-dom'
 
 const CareerAI = () => {
   const benefits = [
@@ -9,6 +10,8 @@ const CareerAI = () => {
     { icon: <Users className='w-5 h-5' />, text: 'Practice with AI coaching' },
     { icon: <TrendingUp className='w-5 h-5' />, text: 'Advance your career' }
   ]
+
+  const navigate = useNavigate();
 
   return (
     <section className='w-full px-4 md:px-8 lg:px-16 py-12 lg:py-20 font-poppins'>
@@ -45,7 +48,7 @@ const CareerAI = () => {
 
               {/* CTA Section */}
               <div className='space-y-4'>
-                <button className='bg-white hover:bg-gray-100 text-[#1a1d2e] font-semibold px-8 py-4 rounded transition-all duration-300 hover:shadow-lg'>
+                <button className='bg-white hover:bg-gray-100 text-[#1a1d2e] font-semibold px-8 py-4 rounded transition-all duration-300 hover:shadow-lg' onClick={()=>navigate("/main/about")}>
                   Learn more
                 </button>
                 <p className='text-gray-400 text-sm'>

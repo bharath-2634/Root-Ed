@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import worldwide from "../../assets/worldwide_img.jpeg";
+import { useNavigate } from 'react-router-dom';
 
 const containerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -16,6 +17,8 @@ const containerVariants = {
 };
 
 const WorldWideFunction = () => {
+  const navigate = useNavigate();
+
   return (
     <div className='bg-white font-poppins'>
       <motion.section 
@@ -38,7 +41,7 @@ const WorldWideFunction = () => {
               </p>
 
               <div className="flex justify-center mb-8 sm:mb-12">
-                <button className="bg-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-[#5BB88A] transition-all duration-300 hover:transform hover:scale-105 shadow-lg flex items-center gap-2 sm:gap-3">
+                <button className="bg-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-[#5BB88A] transition-all duration-300 hover:transform hover:scale-105 shadow-lg flex items-center gap-2 sm:gap-3" onClick={()=>navigate("/auth/login")}>
                   Start learning
                   <FaArrowRight className="text-base sm:text-xl" />
                 </button>

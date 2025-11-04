@@ -1,7 +1,10 @@
 import React from 'react'
 import { GraduationCap, Award, Target, BookOpen, ArrowRight } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 const WhyChoose = () => {
+  const navigate = useNavigate();
+
   return (
     <section className='w-full px-4 md:px-8 lg:px-16 py-12 lg:py-20 font-poppins bg-white'>
       <div className='p-10'>
@@ -59,7 +62,7 @@ const WhyChoose = () => {
              <p className='text-white/80 text-sm md:text-base xl:text-xl leading-relaxed mb-6'>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla et quo, aspernatur ducimus officia, inventore repellat possimus aperiam earum quasi a vitae cumque velit minus eius! Consectetur officia aperiam repudiandae.
             </p>
-            <button className='bg-primary hover:bg-[#00a859] text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 transition-all duration-300 hover:shadow-lg group mt-auto w-fit'>
+            <button className='bg-primary hover:bg-[#00a859] text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 transition-all duration-300 hover:shadow-lg group mt-auto w-fit' onClick={()=>navigate("/auth/login")}>
               Start Free Trial
               <ArrowRight className='w-5 h-5 group-hover:translate-x-1 transition-transform' />
             </button>
