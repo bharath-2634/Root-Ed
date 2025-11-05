@@ -31,9 +31,10 @@ const OurCourses = () => {
             {
                 courses.length==0 || courses==null ? (
                     <div className='w-[100%] flex flex-col items-center justify-center gap-3 mt-10'>
-                        <FaClockRotateLeft className='text-[2rem] text-slate-400'/>
-                        <h2 className='lg:text-[2rem] md:text-[1.6rem] sm:text-[1.8rem] text-[1.8rem] font-medium text-primary_nav text-center mt-0'>Courses will be added soon !</h2>
+                        {/* <FaClockRotateLeft className='text-[2rem] text-slate-400'/> */}
+                        
                         <img src={no_course_img} alt="Root-Ed" className='lg:w-[70%] md:w-[70%] sm:w-[80%] w-[60rem]' />
+                        <h2 className='lg:text-[2rem] md:text-[1.6rem] sm:text-[1.8rem] text-[1.8rem] font-medium text-primary_nav text-center mt-0'>Courses will be added soon !</h2>
                     </div>
                 ):(
                     <div className='w-full p-6'>

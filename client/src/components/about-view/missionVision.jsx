@@ -27,7 +27,7 @@ const MissionVision = () => {
             <div className='relative'>
               {/* Main Background Image */}
               <div className='relative w-full h-full rounded-3xl '>
-                  <img src={missionImg} alt="Our Mission" className="w-full h-[80%] " />
+                  <img src={missionImg} alt="Our Mission" className="w-full h-[70%] " />
               </div>
             </div>
 
@@ -100,7 +100,7 @@ const MissionVision = () => {
             <div className='relative lg:order-2 order-1'>
               {/* Main Background Image */}
               <div className='relative w-full rounded-3xl h-full'>
-                <img src={visionImg} alt="Our Vision" className="w-full h-[80%] " />
+                <img src={visionImg} alt="Our Vision" className="w-full h-[70%] " />
               </div>
             </div>
 

@@ -99,9 +99,8 @@ const TestimonialCarousel = () => {
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
 
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 lg:text-[3rem] ">
-          Words of praise from others <br /> about our presence.
-        </h2>
+        <h2 className='lg:text-[2.4rem] md:text-[1.8rem] sm:text-[1.8rem] text-[1.8rem] font-semibold text-primary_nav text-center m-6'>Words of praise from others <br /><span className='bg-white lg:text-[2.5rem] md:text-[1.8rem] sm:text-[1.8rem] text-[1.8 rem] p-1 text-primary'>about our presence.</span></h2>
+
       </div>
 
       {/* === Two Opposite Rows === */}

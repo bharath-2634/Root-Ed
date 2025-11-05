@@ -14,19 +14,19 @@ const CareerAI = () => {
   const navigate = useNavigate();
 
   return (
-    <section className='w-full px-4 md:px-8 lg:px-16 py-12 lg:py-20 font-poppins'>
+    <section className='w-full px-4 md:px-8 lg:px-16 py-12 lg:py-14 font-poppins -mt-10'>
       <div className='p-10'>
         
-        <div className='bg-[#1a1d2e] rounded-3xl overflow-hidden shadow-2xl '>
+        <div className='bg-primary_nav rounded-3xl overflow-hidden shadow-2xl '>
           <div className='grid grid-cols-1 xl:grid-cols-2 gap-0 items-center justify-center'>
             
             {/* Left Content */}
-            <div className='p-8 md:p-12 lg:p-16 flex flex-col justify-center'>
-              <h2 className='text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight'>
+            <div className='p-8 md:p-12 lg:p-8 flex flex-col justify-center'>
+              <h2 className='text-2xl md:text-3xl lg:text-3xl xl:text-5xl font-medium text-white mb-6 font-poppins'>
                 Reimagine your career in the AI era
               </h2>
               
-              <p className='text-gray-300 text-base md:text-lg xl:text-xl mb-8 leading-relaxed'>
+              <p className='text-gray-300 text-base md:text-lg xl:text-[1.2rem] mb-8'>
                 Future-proof your skills with Personal Plan. Get access to a variety of fresh content from real-world experts.
               </p>
 
@@ -47,20 +47,17 @@ const CareerAI = () => {
               </div>
 
               {/* CTA Section */}
-              <div className='space-y-4'>
+              <div className='space-y-1'>
                 <button className='bg-white hover:bg-gray-100 text-[#1a1d2e] font-semibold px-8 py-4 rounded transition-all duration-300 hover:shadow-lg' onClick={()=>navigate("/main/about")}>
                   Learn more
                 </button>
-                <p className='text-gray-400 text-sm'>
-                  Starting at ₹500/month
-                </p>
               </div>
             </div>
 
             {/* Right Visual Content */}
-            <div className='relative h-full min-h-[400px] lg:min-h-[700px]'>
+            <div className='relative h-full min-h-[.8rem] lg:min-h-[1rem]'>
               {/* Gradient Background */}
-              <div className='h-full  justify-center flex'>
+              <div className='h-full justify-center flex'>
                 <img src={img} alt="" />
               </div>
               {/* Additional decorative elements */}

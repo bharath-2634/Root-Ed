@@ -1,5 +1,6 @@
 import React from 'react'
-import intro_img from "../../assets/intro_img.jpg"
+// import intro_img from "../../assets/intro_img.jpg"
+import intro_img from "../../assets/Side_img.png"
 import { ArrowRight, Users, Check } from 'lucide-react';
 import { motion } from "framer-motion";
 import { useNavigate } from 'react-router-dom';
