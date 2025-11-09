@@ -46,7 +46,7 @@ const Login = () => {
 
 
   return (
-    <div className='mx-auto lg:w-[60%] md:w-[50%] sm:w-[60%] w-[100%] max-w-md space-y-6 text-center flex flex-col items-center justify-center font-poppins overflow-auto overflow-y-scroll scrollbar-hide mb-10'>
+    <div className='mx-auto lg:w-[60%] md:w-[50%] sm:w-[60%] w-[100%] max-w-md space-y-6 text-center flex flex-col items-center justify-center font-poppins overflow-auto mb-10'>
       <div className='flex flex-col items-center justify-center mt-10'>
         <img src={logo} alt="Root-Ed" className='lg:[60%] md:[50%] sm:[40%] w-[30%]'/>
       </div>

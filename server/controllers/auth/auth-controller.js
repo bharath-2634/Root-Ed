@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../../models/User");
 const { OAuth2Client } = require("google-auth-library");
 
+
 // Google OAuth2 Client
 const client = new OAuth2Client(process.env.GOOGLE_OAUTH);
 
@@ -159,9 +160,6 @@ const googleAuth = async (req, res) => {
             return res.status(400).json({ success: false, message: "Token is required" });
         }
 
-        // console.log("token",token);
-
-        // Verify the Google token
         const ticket = await client.verifyIdToken({
             idToken: token,
             audience: process.env.GOOGLE_CLIENT_SECRET,
