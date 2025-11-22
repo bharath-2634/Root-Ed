@@ -15,8 +15,7 @@ import { useEffect } from 'react'
 import CheckAuth from './components/common/checkAuth';
 import Contact from './pages/contact/contact'
 import Events from './pages/events/events'
-
-
+import Cartpage from "./pages/cart/CartPage";
 
 const App = () => {
 
@@ -58,6 +57,7 @@ const App = () => {
               <Route path='about' element={<About/>}/>
               <Route path='events' element={<Events/>}/>
               <Route path='connect' element={<Contact/>}/>
+               <Route path="cart" element={<Cartpage />} />
           </Route>
           <Route path="/admin" element={<CheckAuth isAuthenticated={isAuthenticated} user={user}>
                             <AdminLayout/>
