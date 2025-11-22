@@ -11,11 +11,6 @@ const UserSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  MCID: {
-    type: String,
-    unique: true,
-    required: true,
-  },
   password: {
     type: String,
     required: function () {
@@ -34,8 +29,8 @@ const UserSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ["subscriber", "developer", "contributor"],
-    default: "subscriber",
+    enum: ["Student", "Tutor", "Admin"],
+    default: "Student",
   },
 
   profile: {
@@ -49,18 +44,6 @@ const UserSchema = new mongoose.Schema({
     DOB: Date,
     bio: String,
     avatar_url: String,
-    fundGrade: {
-      type: Number,
-      default: 0,
-    },
-    points: {
-      type: Number,
-      default: 0,
-    },
-    eventCount: {
-      type: Number,
-      default: 0,
-    },
     links: {
       website: String,
       github: String,

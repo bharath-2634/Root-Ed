@@ -64,7 +64,7 @@ const Register = () => {
   .unwrap()
   .then((data) => {
     toast.success("Registration Successful", { theme: "dark" });
-    navigate("/auth/getStarted");
+    navigate("/main/home");
   })
   .catch((err) => {
     toast.error(err.message || "User already exists", { theme: "dark" });

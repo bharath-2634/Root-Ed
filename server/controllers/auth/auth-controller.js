@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../../models/User");
 const { OAuth2Client } = require("google-auth-library");
 
+
 // Google OAuth2 Client
 const client = new OAuth2Client(process.env.GOOGLE_OAUTH);
 
@@ -11,16 +12,16 @@ const registerUser = async (req, res) => {
     try {
         const { userName, email, password, authType = "email", MCID } = req.body;
 
-        console.log("Received Data", req.body);
+        // console.log("Received Data", req.body);
 
         let userExists = await User.findOne({ email });
-        console.log("After Check",userExists)
+        // console.log("After Check",userExists)
         if (userExists)
             return res.status(400).json({
                 success: false,
                 message: "User already exists"
             });
-        console.log("After Check",userExists)
+        // console.log("After Check",userExists)
         // Hash the password only if authType is email
         let hashPassword = null;
         if (authType === "email") {
@@ -33,9 +34,9 @@ const registerUser = async (req, res) => {
             hashPassword = await bcrypt.hash(password, 12);
         }
 
-        console.log("after pass",req.body);
+        // console.log("after pass",req.body);
         // Generate MCID if not provided
-        const generatedMCID = MCID || `MC-${Math.floor(100000 + Math.random() * 900000)}`;
+        // const generatedMCID = MCID || `MC-${Math.floor(100000 + Math.random() * 900000)}`;
 
         // Create new user
         const newUser = new User({
@@ -43,13 +44,13 @@ const registerUser = async (req, res) => {
             email,
             password: hashPassword,
             authType,
-            MCID: generatedMCID,
+            // MCID: generatedMCID,
         });
 
-        console.log("newUser", newUser);
+        // console.log("newUser", newUser);
 
         await newUser.save();
-        console.log("after Save");
+        // console.log("after Save");
 
         // Generate JWT Token
         const token = jwt.sign(
@@ -58,7 +59,7 @@ const registerUser = async (req, res) => {
                 userId: newUser._id,
                 email: newUser.email,
                 role: newUser.role,
-                MCID: newUser.MCID,
+                // MCID: newUser.MCID,
             },
             "CLIENT_SECRET_KEY",
             { expiresIn: "7d" }
@@ -76,12 +77,12 @@ const registerUser = async (req, res) => {
                 userName: newUser.userName,
                 email: newUser.email,
                 role: newUser.role,
-                MCID: newUser.MCID,
+                // MCID: newUser.MCID,
             },
         });
 
     } catch (error) {
-        console.error("Registration Error:", error);
+        // console.error("Registration Error:", error);
         res.status(500).json({
             success: false,
             message: "Server Error",
@@ -96,10 +97,10 @@ const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
 
-        console.log("login",req.body);
+        // console.log("login",req.body);
 
         let checkUser = await User.findOne({ email });
-        console.log(checkUser);
+        // console.log(checkUser);
         if (!checkUser)
             return res.json({
                 success: false,
@@ -123,7 +124,7 @@ const loginUser = async (req, res) => {
                 userId: checkUser._id,
                 email: checkUser.email,
                 role: checkUser.role,
-                MCID: checkUser.MCID,
+                // MCID: checkUser.MCID,
                 userName : checkUser.userName
             },
             "CLIENT_SECRET_KEY",
@@ -138,7 +139,7 @@ const loginUser = async (req, res) => {
                 role: checkUser.role,
                 id: checkUser._id,
                 userName: checkUser.userName,
-                MCID: checkUser.MCID,
+                // MCID: checkUser.MCID,
             },
         });
 
@@ -159,9 +160,6 @@ const googleAuth = async (req, res) => {
             return res.status(400).json({ success: false, message: "Token is required" });
         }
 
-        // console.log("token",token);
-
-        // Verify the Google token
         const ticket = await client.verifyIdToken({
             idToken: token,
             audience: process.env.GOOGLE_CLIENT_SECRET,
@@ -175,14 +173,14 @@ const googleAuth = async (req, res) => {
         // console.log("user",user);
         if (!user) {
             // If the user doesn't exist, create a new one
-            const MCID = `MC-${Math.floor(100000 + Math.random() * 900000)}`;
+            // const MCID = `MC-${Math.floor(100000 + Math.random() * 900000)}`;
 
            user = new User({
                 userName: payload.family_name,
                 email : payload.email,
                 avatar_url: payload.picture,
                 authType: "google",
-                MCID, 
+                // MCID, 
             });
             await user.save();
         }
@@ -193,7 +191,7 @@ const googleAuth = async (req, res) => {
               userId: user._id,
               email: user.email,
               role: user.role,
-              MCID: user.MCID,
+            //   MCID: user.MCID,
           },
           "CLIENT_SECRET_KEY",
           { expiresIn: "7d" }
@@ -208,7 +206,7 @@ const googleAuth = async (req, res) => {
             userName: user.userName,
             email: user.email,
             role: user.role,
-            MCID: user.MCID,
+            // MCID: user.MCID,
             avatar_url: user.avatar_url,
         },
     });
@@ -217,7 +215,7 @@ const googleAuth = async (req, res) => {
         //     { success: true, message: "Google login successful", user });
 
     } catch (error) {
-        console.error("Google Auth Error:", error);
+        // console.error("Google Auth Error:", error);
         res.status(500).json({ success: false, message: "Internal Server Error" });
     }
 };
