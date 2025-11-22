@@ -47,7 +47,7 @@ const WorldWideFunction = () => {
                 </button>
               </div>
 
-              <div className="w-full">
+              {/* <div className="w-full">
                 <motion.img 
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -57,7 +57,7 @@ const WorldWideFunction = () => {
                   alt="Global learning network visualization" 
                   className="w-full h-auto object-contain max-w-full"
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </motion.section>

@@ -20,7 +20,7 @@ const OurCourses = () => {
         dispatch(getAllCourses()).then((course)=>setCourse(course)).catch((error)=>console.log(error));
     },[]);
 
-    console.log(courses);
+    // console.log(courses);
 
     
     return (
@@ -66,7 +66,7 @@ const OurCourses = () => {
                                     courses.map(({bestSeller, category, description, duration, image, instructor, level, maxParticipants, price, rating, sales,scheduleDate, scheduleTime, title, type})=>{
                                         return (
                                             <SwiperSlide>
-                                                <div className='lg:w-[100%] md:w-[90%] sm:w-[80%] bg-white rounded shadow flex flex-col items-start justify-center gap-3 sm:ml-10' onClick={()=>console.log("show PopUp")}>
+                                                <div className='lg:w-[100%] md:w-[90%] sm:w-[80%] bg-white rounded shadow flex flex-col items-start justify-center gap-3 sm:ml-10'>
                                                     <div className="h-50 flex items-center justify-center relative">
                                                         <img 
                                                             src={image} 

@@ -46,23 +46,23 @@ const FAQSection = () => {
   const faqData = [
     {
       id: 1,
-      question: "What is Telemedicine?",
-      answer: "Telemedicine is the practice of providing healthcare services remotely using technology such as video calls, phone consultations, and digital health platforms. It allows patients to consult with healthcare providers from the comfort of their homes."
+      question: "What is RootEd?",
+      answer: "Rooted is an STEAM education company offering enrichment programs for students from kindergarten through grade 12 in cutting-edge scientific fields"
     },
     {
       id: 2,
-      question: "How do I schedule an online consultation?",
-      answer: "You can schedule an online consultation by visiting our platform, selecting your preferred healthcare provider, choosing an available time slot, and completing the booking process. You'll receive a confirmation email with the meeting details."
+      question: "What are rooted s instructional methods ?",
+      answer: "Root”Ed” outlines a vision for an education system that encourages creativity , independent research and free thinking. The organization aims for every student to have the opportunity to develop and establish their own identity. "
     },
     {
       id: 3,
-      question: "Do you accept insurance?",
-      answer: "Yes, we accept most major insurance plans. However, coverage may vary depending on your specific plan and the type of consultation. We recommend checking with your insurance provider or contacting our support team to verify coverage."
+      question: "How rooted helps student learning beyond the academics ?",
+      answer: "To provide exceptional construction services that exceed client expectations through innovation, craftsmanship, and a commitment to sustainability."
     },
     {
       id: 4,
-      question: "Is my personal information secure?",
-      answer: "Absolutely. We use industry-standard encryption and security measures to protect your personal information. Our platform is HIPAA compliant and follows strict privacy protocols to ensure your medical data remains confidential and secure."
+      question: "How to join Root''ED ?",
+      answer: "Reach out to us by filling the contact form and we'll reach out to you!"
     }
   ]
 

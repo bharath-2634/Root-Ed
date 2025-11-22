@@ -23,7 +23,7 @@ const About = () => {
       <CareerAI/>
       <AboutCEO/>
       <MissionVision/>
-      <TestimonialCarousel/>
+      {/* <TestimonialCarousel/> */}
       <FAQSection/>
       <Footer/>
 

@@ -24,7 +24,7 @@ const NavHeader = () => {
 
   const handleLinkClick = (name) => {
     setActiveLink(name);
-    console.log("active link", activeLink);
+    // console.log("active link", activeLink);
     setIsOpen(false); 
   };
 
@@ -47,7 +47,7 @@ const NavHeader = () => {
   const handleLogout = () => {
     setShowLogoutPopUp(false);
 
-    dispatch(logoutUser()).then(()=>console.log("logout successful ")).catch((error)=>console.log(error));
+    dispatch(logoutUser());
   }
 
   const ConfirmationModal = () => {

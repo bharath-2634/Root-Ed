@@ -60,7 +60,7 @@ const createCourse = async (req, res) => {
       course: newCourse,
     });
   } catch (error) {
-    console.error("Create Course Error:", error);
+    // console.error("Create Course Error:", error);
     res.status(500).json({
       success: false,
       message: "Failed to create course",
@@ -90,7 +90,7 @@ const getAllCourses = async (req, res) => {
       courses,
     });
   } catch (error) {
-    console.error("Get Courses Error:", error);
+    // console.error("Get Courses Error:", error);
     res.status(500).json({
       success: false,
       message: "Failed to fetch courses",
@@ -122,7 +122,7 @@ const getCourseById = async (req, res) => {
       course,
     });
   } catch (error) {
-    console.error("Get Course Error:", error);
+    // console.error("Get Course Erro/r:", error);
     res.status(500).json({
       success: false,
       message: "Failed to fetch course",
@@ -160,7 +160,7 @@ const updateCourse = async (req, res) => {
       course: updatedCourse,
     });
   } catch (error) {
-    console.error("Update Course Error:", error);
+    // console.error("Update Course Error:", error);
     res.status(500).json({
       success: false,
       message: "Failed to update course",
@@ -189,7 +189,7 @@ const deleteCourse = async (req, res) => {
       course: deletedCourse,
     });
   } catch (error) {
-    console.error("Delete Course Error:", error);
+    // console.error("Delete Course Error:", error);
     res.status(500).json({
       success: false,
       message: "Failed to delete course",
@@ -230,7 +230,7 @@ const toggleCourseStatus = async (req, res) => {
       course,
     });
   } catch (error) {
-    console.error("Toggle Status Error:", error);
+    // console.error("Toggle Status Error:", error);
     res.status(500).json({
       success: false,
       message: "Failed to update course status",
@@ -260,7 +260,7 @@ const getCourseStats = async (req, res) => {
       },
     });
   } catch (error) {
-    console.error("Get Stats Error:", error);
+    // console.error("Get Stats Error:", error);
     res.status(500).json({
       success: false,
       message: "Failed to fetch statistics",

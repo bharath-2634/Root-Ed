@@ -28,9 +28,9 @@ const App = () => {
     dispatch(checkAuth());
   },[dispatch]);
 
-  if (isLoading) console.log("loading");
+  // if (isLoading) console.log("loading");
 
-  console.log("user",user);
+  // console.log("user",user);
 
   return (
     <div className='flex flex-col overflow-hidden bg-primary'>

@@ -15,7 +15,7 @@ export const addPost = createAsyncThunk(
   "posts/addPost",
   async (formData, { rejectWithValue }) => {
     try {
-        console.log("form-data",formData);
+        // console.log("form-data",formData);
       const response = await axios.post(`${API_URL}/add-post`, formData, {
         withCredentials: true,
       });

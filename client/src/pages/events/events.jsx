@@ -18,7 +18,7 @@ const Events = () => {
         <BlogSection/>
         {/* <EventsVideo/>
         <EventsVideo/> */}
-        <TestimonialCarousel/>
+        {/* <TestimonialCarousel/> */}
         <FAQSection/>
         <Footer/>
     </div>

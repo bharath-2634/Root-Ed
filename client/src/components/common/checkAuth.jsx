@@ -6,6 +6,10 @@ const CheckAuth = ({ isAuthenticated, user, children }) => {
 
     const location = useLocation();
 
+    if(location.pathname==="/" && isAuthenticated && user?.role==="Admin") {
+      return <Navigate to="/admin/dashboard"/>
+    }
+
     if(location.pathname==="/") {
        if(isAuthenticated) {
 

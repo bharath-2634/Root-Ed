@@ -49,11 +49,10 @@ const EducationSystemIntro = () => {
 
                     <div className='w-full lg:w-1/2  lg:pt-0 font-poppins flex flex-col items-center justify-center gap-3'>
                         <h2 className='lg:text-[2.5rem] md:text-[2.2rem] sm:text-[2.2rem] text-[1.5rem] font-semibold text-primary lg:text-start mb-5 
-                        lg:-ml-[1.6rem] md:-ml-[1rem] sm:ml-[1rem] lg:mt-0 md:-mt-10 sm:mt-0'>Our Education System <br /><span className='text-primary_nav lg:text-[2.5rem] md:text-[2.2rem] sm:text-[2.2rem] text-[1.8rem]'>Inspires</span> you more</h2>
+                        lg:ml-[1.6rem] md:-ml-[1rem] sm:ml-[1rem] lg:mt-0 md:-mt-10 sm:mt-0'>Rediscovering education with a <span className='text-primary_nav lg:text-[2.5rem] md:text-[2.2rem] sm:text-[2.2rem] text-[1.8rem]'>purpose</span></h2>
 
                         <p className='lg:text-lg md:text-[1.1rem] text-gray-600 leading-relaxed lg:p-6 md:p-6 sm:pl-12 sm:pr-12'>
-                            We believe learning should spark creativity, not memorization. Our <span className='text-primary'> STEM-based approach</span> connects science, technology, engineering, and math to real-world applications.
-                            We empower students to <span className='text-primary'>think</span>, <span className='text-primary'>create</span>, and <span className='text-primary'>lead</span> with confidence.
+                            We believe learning should spark creativity, not memorization. Our <span className='text-primary'>At RootEd</span> we believe that education should be redefined and elevated to foster original <span className='text-primary'>thinkers</span>, <span className='text-primary'>change-makers</span>, and <span className='text-primary'>visionaries</span> in science and technology.
                         </p>
 
                         {/* Paragraph 2 */}

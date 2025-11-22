@@ -19,7 +19,7 @@ const AddPosts = async (req, res) => {
         });
 
     }catch(error) {
-        console.error("Post Creation:", error);
+        // console.error("Post Creation:", error);
         res.status(500).json({
             success: false,
             message: "Server Error",
@@ -34,7 +34,7 @@ const getAllPosts = async(req,res) => {
         res.status(200).json(posts);
 
     }catch(error) {
-        console.error('Error fetching posts:', error);
+        // console.error('Error fetching posts:', error);
         res.status(500).json({ message: 'Server error while fetching posts' });
     }
 }
@@ -45,7 +45,7 @@ const getPostById = async(req,res) => {
         if (!post) return res.status(404).json({ message: 'Post not found' });
         res.status(200).json(post);
     } catch (error) {
-        console.error('Error fetching post:', error);
+        // console.error('Error fetching post:', error);
         res.status(500).json({ message: 'Server error while fetching post' });
     }
 }
@@ -56,7 +56,7 @@ const deletePost = async (req,res) => {
         if (!deletedPost) return res.status(404).json({ message: 'Post not found' });
         res.status(200).json({ message: 'Post deleted successfully' });
     } catch (error) {
-        console.error('Error deleting post:', error);
+        // console.error('Error deleting post:', error);
         res.status(500).json({ message: 'Server error while deleting post' });
     }
 }
@@ -90,7 +90,7 @@ const updatePost = async (req, res) => {
     });
 
   } catch (error) {
-    console.error("Error updating post:", error);
+    // console.error("Error updating post:", error);
     res.status(500).json({
       success: false,
       message: "Server error while updating post",

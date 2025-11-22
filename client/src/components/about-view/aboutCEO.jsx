@@ -38,7 +38,7 @@ const AboutCEO = () => {
               </h2>
               
               <p className='text-gray-600 text-base md:text-xl leading-relaxed mb-4 text-justify'>
-                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae ea ex quaerat, necessitatibus sequi explicabo magni esse asperiores quo libero sint, voluptatibus illo eveniet hic, iusto eligendi eum vitae atque.
+                Anila Kanna holds a Bachelor's degree from Pondicherry University,India and a Master's degrees From stevens Institute of Technology,New Jersey in Chemical Engineering and was pursuing a PhD in Mechanical Engineering at Rutgers University ,New Jersey before pausing her studies to launch Root “Ed”. With more than a decade of industry and academic research and development experience in areas including biomaterials, biomechanics, batteries, fuel cells, and sugar production, Anila leverages her solid academic foundation in both  chemical and mechanical engineering to design innovative STEM programs grounded in the latest technologies shaping today's world. 
               </p>
             </div>
 

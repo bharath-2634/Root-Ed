@@ -22,7 +22,7 @@ const home = () => {
       <LearnSmarterSection/>
       <OurCourses/>
       <WorldWideFunction/>
-      <TestimonialCarousel/>
+      {/* <TestimonialCarousel/> */}
       <FAQSection/>
       <Footer/>
     </div>

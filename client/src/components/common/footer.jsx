@@ -33,7 +33,7 @@ const Footer = () => {
             <div className="flex items-center gap-2">
               <Mail size={16} />
               <span className="text-xs sm:text-sm truncate">
-                rooted2025stem@gmail.com
+                Rooted.ad2025@gmail.com
               </span>
             </div>
             <Copy size={14} className="cursor-pointer shrink-0" />

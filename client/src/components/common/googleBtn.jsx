@@ -12,17 +12,16 @@ const GoogleLoginButton = () => {
      <div className="google-btn-container w-full text-white">
         <GoogleLogin
           onSuccess={(credentialResponse) => {
-            console.log("googleBtn",credentialResponse.credential);
             dispatch(googleLogin(credentialResponse.credential)).then((data)=>{
-              if(data?.payload?.success) {
-                console.log("Successs login")
-              }else {
-                console.log("failed login")
-              }
+              // if(data?.payload?.success) {
+              //   console.log("Successs login")
+              // }else {
+              //   console.log("failed login")
+              // }
             });
           }}
           onError={() => {
-            console.log("Google Login Failed");
+            // console.log("Google Login Failed");
           }}
           theme="outline"
         />

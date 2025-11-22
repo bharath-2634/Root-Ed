@@ -38,9 +38,7 @@ const OurStory = () => {
               </h2>
               
               <p className='text-gray-600 text-base sm:text-[1.1rem] leading-relaxed text-justify xl:text-xl'>
-                Eduvance was founded with one goal: to make high-quality education accessible to everyone, everywhere. 
-                We believe learning should be flexible, affordable, and deeply impactful—empowering individuals to pursue 
-                their goals and adapt in an ever-changing world.
+               Rooted is an STEAM education company offering enrichment programs for students from kindergarten through grade 12 in cutting-edge scientific fields. Our instructional methods integrate art-based activities to encourage critical thinking and enhance comprehension. 
               </p>
             
             </div>
@@ -74,10 +72,10 @@ const OurStory = () => {
           </div>
 
           {/* Stats Section */}
-          <div className='mt-16 lg:mt-20'>
+          {/* <div className='mt-16 lg:mt-20'>
             <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8'>
               
-              {/* Stat 1 */}
+              
               <div className='text-center space-y-2'>
                 <h3 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-[#131D2D]'>
                   50k+
@@ -87,7 +85,7 @@ const OurStory = () => {
                 </p>
               </div>
 
-              {/* Stat 2 */}
+             
               <div className='text-center space-y-2'>
                 <h3 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-[#131D2D]'>
                   120+
@@ -97,7 +95,7 @@ const OurStory = () => {
                 </p>
               </div>
 
-              {/* Stat 3 */}
+             
               <div className='text-center space-y-2'>
                 <h3 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-[#131D2D]'>
                   300+
@@ -107,7 +105,6 @@ const OurStory = () => {
                 </p>
               </div>
 
-              {/* Stat 4 */}
               <div className='text-center space-y-2'>
                 <h3 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-[#131D2D]'>
                   98%
@@ -118,7 +115,7 @@ const OurStory = () => {
               </div>
 
             </div>
-          </div>
+          </div> */}
 
         </div>
       </section>

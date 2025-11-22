@@ -18,14 +18,11 @@ const LearnSmarterSection = () => {
                 <div className='relative z-10 max-w-4xl mx-auto text-left py-12'>
                     
                     <h2 className='text-3xl sm:text-3xl md:text-5xl font-extrabold  mb-6 text-primary leading-loose'>
-                        Learn to study smarter <br className='hidden sm:block'/> and effectively
+                       Get the experience of being a  <br className='hidden sm:block'/> researcher
                     </h2>
 
                     <p className='text-lg md:text-xl text-gray-300 leading-relaxed'>
-                        Acquire in demand skills ✏️ through Focotech's
-                        comprehensive learning platform, designed to
-                        provide you with necessary knowledge 💡
-                        & tools 🧑‍💻 for career advancement.
+                        Through our programs develop research and entrepreneurial thinking and stay ahead of the crowd in this AI driven world.
                     </p>
                 </div>
             </section>

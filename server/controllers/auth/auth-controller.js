@@ -12,16 +12,16 @@ const registerUser = async (req, res) => {
     try {
         const { userName, email, password, authType = "email", MCID } = req.body;
 
-        console.log("Received Data", req.body);
+        // console.log("Received Data", req.body);
 
         let userExists = await User.findOne({ email });
-        console.log("After Check",userExists)
+        // console.log("After Check",userExists)
         if (userExists)
             return res.status(400).json({
                 success: false,
                 message: "User already exists"
             });
-        console.log("After Check",userExists)
+        // console.log("After Check",userExists)
         // Hash the password only if authType is email
         let hashPassword = null;
         if (authType === "email") {
@@ -34,7 +34,7 @@ const registerUser = async (req, res) => {
             hashPassword = await bcrypt.hash(password, 12);
         }
 
-        console.log("after pass",req.body);
+        // console.log("after pass",req.body);
         // Generate MCID if not provided
         // const generatedMCID = MCID || `MC-${Math.floor(100000 + Math.random() * 900000)}`;
 
@@ -47,10 +47,10 @@ const registerUser = async (req, res) => {
             // MCID: generatedMCID,
         });
 
-        console.log("newUser", newUser);
+        // console.log("newUser", newUser);
 
         await newUser.save();
-        console.log("after Save");
+        // console.log("after Save");
 
         // Generate JWT Token
         const token = jwt.sign(
@@ -82,7 +82,7 @@ const registerUser = async (req, res) => {
         });
 
     } catch (error) {
-        console.error("Registration Error:", error);
+        // console.error("Registration Error:", error);
         res.status(500).json({
             success: false,
             message: "Server Error",
@@ -97,10 +97,10 @@ const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
 
-        console.log("login",req.body);
+        // console.log("login",req.body);
 
         let checkUser = await User.findOne({ email });
-        console.log(checkUser);
+        // console.log(checkUser);
         if (!checkUser)
             return res.json({
                 success: false,
@@ -215,7 +215,7 @@ const googleAuth = async (req, res) => {
         //     { success: true, message: "Google login successful", user });
 
     } catch (error) {
-        console.error("Google Auth Error:", error);
+        // console.error("Google Auth Error:", error);
         res.status(500).json({ success: false, message: "Internal Server Error" });
     }
 };
