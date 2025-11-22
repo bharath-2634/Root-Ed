@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Rocket, LogOut, AlertTriangle  } from 'lucide-react'; 
+import { Menu,  ShoppingCartIcon, X, Rocket, LogOut, AlertTriangle  } from 'lucide-react'; 
 import logo from "../../assets/logo.png";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -134,6 +134,15 @@ const NavHeader = () => {
           }
 
           {/* CTA Button (Always visible on desktop/tablet) */}
+            <div
+            onClick={() => navigate("/main/cart")}
+            className="relative md:mr-8 cursor-pointer flex justify-center md:mt-3"
+          >
+            <ShoppingCartIcon className="h-7 w-7" />
+            <span className="absolute -top-1 -right-3 bg-green-400 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+              1
+            </span>
+          </div>
           {
             isAuthenticated ? (
               <div className="hidden md:block lg:block">
