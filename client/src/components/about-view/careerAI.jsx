@@ -25,14 +25,14 @@ const CareerAI = () => {
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8 }}
     >
-      <section className='w-full px-4 md:px-8 lg:px-16 py-12 lg:py-14 font-poppins -mt-10'>
-        <div className='p-10'>
+      <section className='w-full px-4 md:px-8 lg:px-16 py-12 md:py-16 lg:py-20 font-poppins'>
+        <div className='max-w-7xl mx-auto'>
           
           <div className='bg-primary_nav rounded-3xl overflow-hidden shadow-2xl '>
-            <div className='grid grid-cols-1 xl:grid-cols-2 gap-0 items-center justify-center'>
+            <div className='grid grid-cols-1 xl:grid-cols-2 gap-0 items-center justify-between'>
               
               {/* Left Content */}
-              <div className='p-8 md:p-12 lg:p-8 flex flex-col justify-center'>
+              <div className='p-8 md:p-10 lg:p-12 flex flex-col justify-center'>
                 <h2 className='text-2xl md:text-3xl lg:text-3xl xl:text-5xl font-medium text-white mb-6 font-poppins'>
                   Reimagine your career in the AI era
                 </h2>
@@ -66,14 +66,14 @@ const CareerAI = () => {
               </div>
 
               {/* Right Visual Content */}
-              <div className='relative h-full min-h-[.8rem] lg:min-h-[1rem]'>
+              <div className='relative flex items-center justify-end w-full'>
                 {/* Gradient Background */}
-                <div className='h-full justify-center flex'>
-                  <img src={img} alt="" />
+                <div className='w-full flex justify-end items-center'>
+                  <img src={img} alt="Career AI" className='w-full h-auto hidden xl:block max-h-[550px] object-cover' />
                 </div>
                 {/* Additional decorative elements */}
-                <div className='absolute top-1/4 left-8 w-12 h-12 bg-white/10 rounded-full backdrop-blur-sm'></div>
-                <div className='absolute bottom-1/4 left-12 w-8 h-8 bg-white/10 rounded-full backdrop-blur-sm'></div>
+                <div className='absolute top-1/4 left-8 w-12 h-12 bg-white/10 rounded-full backdrop-blur-sm hidden md:block'></div>
+                <div className='absolute bottom-1/4 left-12 w-8 h-8 bg-white/10 rounded-full backdrop-blur-sm hidden md:block'></div>
               </div>
 
             </div>

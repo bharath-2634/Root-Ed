@@ -21,37 +21,37 @@ const OurStory = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="py-16 sm:py-20 lg:py-24 bg-white -mt-12"
+        className="bg-white"
     >
-      <section className='w-full px-4 md:px-8 lg:px-16 py-12 lg:py-20 font-poppins xl:mt-[22rem] md:mt-[18rem] sm:mt-[10rem] mt-[3rem]'>
-        <div className='px-10'>
+      <section className='w-full px-4 md:px-8 lg:px-16 py-12 md:py-16 lg:py-20 font-poppins'>
+        <div className='max-w-7xl mx-auto'>
           
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start justify-between '>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center justify-between '>
             
             {/* Left Content */}
-            <div className='space-y-6'>
+            <div className='space-y-6 '>
 
-              <h2 className='text-3xl sm:text-4xl lg:text-4xl xl:text-5xl font-semibold text-primary_nav'>
+              <h2 className='text-3xl sm:text-4xl lg:text-5xl font-semibold text-primary_nav text-center md:text-left'>
                 Gateway To <span className='text-primary'>Personal </span>
                 And Professional 
                 <span className='text-primary'> Growth</span>
               </h2>
               
-              <p className='text-gray-600 text-base sm:text-[1.1rem] leading-relaxed text-justify xl:text-xl'>
+              <p className='text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed text-justify'>
                Rooted is an STEAM education company offering enrichment programs for students from kindergarten through grade 12 in cutting-edge scientific fields. Our instructional methods integrate art-based activities to encourage critical thinking and enhance comprehension. 
               </p>
             
             </div>
 
             {/* Right Image */}
-            <div className='relative flex items-center justify-center lg:justify-end'>
-              <div className='relative w-full max-w-md lg:max-w-lg'>
+            <div className='relative flex items-center justify-center lg:justify-end w-full'>
+              <div className='relative w-full'>
                 {/* Background decorative circle */}
-                <div className='absolute -top-6 -right-6 w-32 h-32 bg-purple-200 rounded-full opacity-50 blur-2xl'></div>
-                <div className='absolute -bottom-6 -left-6 w-40 h-40 bg-blue-200 rounded-full opacity-50 blur-2xl'></div>
-                
-                {/* Main Image */}
-                <div className='relative z-10 flex items-center justify-center'>
+                <div className='absolute -top-6 -right-6 w-32 h-32 bg-purple-200 rounded-full opacity-50 blur-2xl hidden md:block'></div>
+                <div className='absolute -bottom-6 -left-6 w-40 h-40 bg-blue-200 rounded-full opacity-50 blur-2xl hidden md:block'></div>
+
+                {/* Main Image - limit max width so it aligns with text */}
+                <div className='relative z-10 flex w-full justify-center lg:justify-end'>
                   <motion.img  
                       initial={{ opacity: 0, scale: 0.9 }}
                       whileInView={{ opacity: 1, scale: 1 }}
@@ -59,13 +59,11 @@ const OurStory = () => {
                       viewport={{ once: true }}
                       src={storyImage} 
                       alt="Global learning network visualization" 
-                      className='lg:w-[120%] md:w-[100%] sm:w-[100%] w-[120%] h-auto object-contain rounded-3xl'
+                      className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain rounded-3xl"
                       onError={(e) => e.target.style.display='none'}
                   />
                 </div>
 
-                {/* Decorative badge */}
-              
               </div>
             </div>
 
