@@ -7,26 +7,23 @@ const AboutHeader = () => {
   const videoSrc = 'https://www.w3schools.com/html/mov_bbb.mp4';
 
   return (
-    <div className="w-full relative flex flex-col items-center justify-center gap-3 font-poppins">
+    <div className="w-full flex flex-col items-center justify-center font-poppins">
       {/* Background section */}
       <div
-        className="w-full h-[30rem]  bg-center"
+        className="w-full py-12 md:py-16 lg:py-20 bg-center"
         style={{ backgroundImage: `url(${white_grid_bg})` }}
       >
-
-        <div className='w-full flex flex-col items-center justify-center gap-6 p-3'>
-          <h2 className='lg:text-[2.4rem] md:text-[2.1rem] sm:text-[2rem] text-[2rem] font-semibold text-primary_nav text-center m-6'>About <span className='text-primary'>Root-Ed</span></h2>
-          <p className='text-gray-600 text-[.8rem] sm:text-[1.2rem] md:text-[1rem] xl:text-[1.2rem] leading-relaxed text-center w-[90%]'>
+        <div className='w-full flex flex-col items-center justify-center gap-6 px-4 md:px-8'>
+          <h2 className='text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-semibold text-primary_nav text-center'>About <span className='text-primary'>Root-Ed</span></h2>
+          <p className='text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed text-center max-w-4xl'>
             Learn from top industry professionals who bring years of real-world experience to the classroom, providing you with the latest tools, techniques, and insights needed to excel in your field.
           </p>
         </div>
       </div>
 
-      
-
       {/* Video Section */}
-      <div className="absolute xl:top-[115%] sm:top-[100%] top-[80%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex justify-center px-4 sm:px-8">
-        <div className="w-full max-w-4xl aspect-video bg-primary relative rounded-[1.2rem] overflow-hidden shadow-lg">
+      <div className="w-full flex justify-center px-4 sm:px-8 py-8 md:py-12 lg:py-16">
+        <div className="w-full max-w-4xl aspect-video bg-primary relative rounded-2xl overflow-hidden shadow-2xl">
           {!isPlaying ? (
             <>
               {/* Thumbnail */}
