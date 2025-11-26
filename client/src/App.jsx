@@ -13,6 +13,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { checkAuth } from './store/auth-slice'
 import { useEffect } from 'react'
 import CheckAuth from './components/common/checkAuth';
+import Contact from './pages/contact/contact'
+import Events from './pages/events/events'
+
 
 
 const App = () => {
@@ -25,9 +28,9 @@ const App = () => {
     dispatch(checkAuth());
   },[dispatch]);
 
-  if (isLoading) console.log("loading");
+  // if (isLoading) console.log("loading");
 
-  console.log("user",user);
+  // console.log("user",user);
 
   return (
     <div className='flex flex-col overflow-hidden bg-primary'>
@@ -53,6 +56,8 @@ const App = () => {
                           </CheckAuth>}>
               <Route path='home' element={<Home/>}/>
               <Route path='about' element={<About/>}/>
+              <Route path='events' element={<Events/>}/>
+              <Route path='connect' element={<Contact/>}/>
           </Route>
           <Route path="/admin" element={<CheckAuth isAuthenticated={isAuthenticated} user={user}>
                             <AdminLayout/>

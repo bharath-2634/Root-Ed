@@ -5,14 +5,15 @@ import OurStory from '@/components/about-view/ourStory'
 import WhyChoose from '@/components/about-view/whyChoose'
 import CareerAI from '@/components/about-view/careerAI'
 import AboutCEO from '@/components/about-view/aboutCEO'
-import OurMission from '@/components/about-view/ourMission'
-import OurVision from '@/components/about-view/ourVision'
-import ClientTestimonials from '@/components/about-view/clientTestimonials'
+import MissionVision from '@/components/about-view/missionVision'
+import TestimonialCarousel from '@/components/common/testimonial'
+import FAQSection from '@/components/common/faq'
+import Footer from '@/components/common/footer'
 
 
 const About = () => {
   return (
-    <div className='w-full flex flex-col items-center justify-center py-3 gap-6'>
+    <div className='w-full flex flex-col items-center justify-center  gap-6'>
       <div className="w-full">
         <NavHeader/>
       </div>
@@ -21,9 +22,10 @@ const About = () => {
       <WhyChoose/>
       <CareerAI/>
       <AboutCEO/>
-      <OurMission/>
-      <OurVision/>
-      <ClientTestimonials/>
+      <MissionVision/>
+      {/* <TestimonialCarousel/> */}
+      <FAQSection/>
+      <Footer/>
 
     </div>
   )

@@ -68,7 +68,7 @@ export const googleLogin = createAsyncThunk(
       { withCredentials: true }
     );
 
-    console.log("slice", response.data);
+    // console.log("slice", response.data);
     const data = response.data;
     if(data.success) {
       localStorage.setItem("token",data.token);
@@ -113,7 +113,7 @@ export const checkAuth = createAsyncThunk(
         },
       }
     );
-    console.log("data from Auth Slice",response.data);
+    // console.log("data from Auth Slice",response.data);
     return response.data;
   }
 );
@@ -144,7 +144,7 @@ const authSlice = createSlice({
           state.isLoading = true;
         })
         .addCase(loginUser.fulfilled, (state, action) => {
-          console.log(action);
+          // console.log(action);
           state.isLoading = false;
           state.user = action.payload.success ? action.payload.user : null;
           state.isAuthenticated = action.payload.success;
@@ -176,7 +176,7 @@ const authSlice = createSlice({
           state.isLoading = true;
         })
         .addCase(checkAuth.fulfilled, (state, action) => {
-          console.log("checkAuth",action.payload);
+          // console.log("checkAuth",action.payload);
           state.isLoading = false;
           state.user = action.payload.success ? action.payload.user : null;
           state.isAuthenticated = action.payload.success;
